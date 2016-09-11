@@ -2,7 +2,7 @@
 
 
 
-Learning Angular2 myself to accomplish the task assigned by *Panacloud Bootcamp Recruitment*
+Learning Angular2 myself to accomplish the task assigned by **Panacloud Bootcamp Recruitment**
 
 
 
