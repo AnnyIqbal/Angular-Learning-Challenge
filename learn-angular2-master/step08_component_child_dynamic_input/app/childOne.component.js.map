@@ -1,1 +1,0 @@
-{"version":3,"file":"childOne.component.js","sourceRoot":"","sources":["childOne.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAwB,eAAe,CAAC,CAAA;AAOxC;IAEI;QACE,IAAI,CAAC,IAAI,GAAG,MAAM,CAAC;IACrB,CAAC;IATL;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,WAAW;YACrB,QAAQ,EAAE,mDAAmD;YAC7D,MAAM,EAAE,CAAC,MAAM,CAAC;SACnB,CAAC;;yBAAA;IAMF,wBAAC;AAAD,CAAC,AALD,IAKC;AALY,yBAAiB,oBAK7B,CAAA"}
