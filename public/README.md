@@ -20,3 +20,9 @@ Learning Angular2 myself to accomplish the task assigned by **_Panacloud Bootcam
  
  
  HTML, CSS, JavaScript
+ 
+ 
+ **_Here is my firstapp: "Hello World" - Angular2 app with TypeScript_**
+ 
+ 
+#Demo: [https://angular2-helloworldapp.firebaseapp.com]
