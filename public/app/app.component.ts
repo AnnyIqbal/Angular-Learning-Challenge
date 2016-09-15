@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SearchBox }     from './app.searchBox';
+import { SearchBox } from './app.searchBox';
 
 export class Hero {
   id: number;
@@ -8,16 +8,16 @@ export class Hero {
 
 @Component({
   selector: 'my-app',
-  template: `<searchBox></searchBox>`
-  // template: `<h1>{{title}}</h1>
-  // <h2>{{hero.name}} details!</h2>
-  // <div>
-  //   <label>id: </label>{{hero.id}}
-  // </div>
-  // <div>
-  //   <label>name: </label>
-  //     <input [(ngModel)]="hero.name" placeholder="name">
-  //   </div>`
+  //template: `<searchBox [placeholder]="'Custom Placeholder'"></searchBox>`
+  template: `<h1>{{title}}</h1>
+  <h2>{{hero.name}} details!</h2>
+  <div>
+    <label>id: </label>{{hero.id}}
+  </div>
+  <div>
+    <label>name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </div>`
 })
 export class AppComponent { 
   title = "Tour of Heroes";

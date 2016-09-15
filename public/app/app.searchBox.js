@@ -8,11 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var SearchBox = (function () {
     function SearchBox() {
+        this.text = "Search";
     }
+    SearchBox.prototype.clear = function (input) {
+        input.value = '';
+    };
+    __decorate([
+        core_1.Input('placeholder')
+    ], SearchBox.prototype, "text");
     SearchBox = __decorate([
         core_1.Component({
             selector: 'searchBox',
-            template: "<h3> Search By Ad Title</h3>\n            <label for=\"search\"> Search by ad title </label>\n            <input type=\"text\" placeholder=\"Search\" id= \"search\" />\n            <button class=\"clear-btn\">"
+            template: "<h3> Search By Ad Title</h3>\n            <label for=\"search\"> Search by ad title </label>\n            <input type=\"text\" placeholder={{text}} id= \"search\" #input />\n            <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>"
         })
     ], SearchBox);
     return SearchBox;
