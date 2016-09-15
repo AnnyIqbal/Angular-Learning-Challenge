@@ -6,26 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
+var SearchBox = (function () {
+    function SearchBox() {
     }
-    return Hero;
-}());
-exports.Hero = Hero;
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Tour of Heroes";
-        this.hero = {
-            id: 1,
-            name: 'Windstorm'
-        };
-    }
-    AppComponent = __decorate([
+    SearchBox = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<searchBox></searchBox>"
+            selector: 'searchBox',
+            template: "<h3> Search By Ad Title</h3>\n            <label for=\"search\"> Search by ad title </label>\n            <input type=\"text\" placeholder=\"Search\" id= \"search\" />\n            <button class=\"clear-btn\">"
         })
-    ], AppComponent);
-    return AppComponent;
+    ], SearchBox);
+    return SearchBox;
 }());
-exports.AppComponent = AppComponent;
+exports.SearchBox = SearchBox;
