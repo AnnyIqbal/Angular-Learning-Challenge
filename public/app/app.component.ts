@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchBox }     from './app.searchBox';
 
 export class Hero {
   id: number;
