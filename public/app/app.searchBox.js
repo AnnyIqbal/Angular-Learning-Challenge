@@ -19,7 +19,8 @@ var SearchBox = (function () {
     SearchBox = __decorate([
         core_1.Component({
             selector: 'searchBox',
-            template: "<h3> Search By Ad Title</h3>\n            <label for=\"search\"> Search by ad title </label>\n            <input type=\"text\" placeholder={{text}} id= \"search\" #input />\n            <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>"
+            template: "<h3> Search By Ad Title</h3>\n    <label for=\"search\"> Search by ad title </label>\n    <input type=\"text\"  [placeholder]=\"'Custom Placeholder'\" id= \"search\" #input />\n    <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>",
+            styles: [".clear-btn {\n      background-color: rgb(72, 95, 249);\n      color: white;\n      width: 60px;\n      height: 22px;\n    }"]
         })
     ], SearchBox);
     return SearchBox;

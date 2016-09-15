@@ -8,7 +8,6 @@ export class Hero {
 
 @Component({
   selector: 'my-app',
-  //template: `<searchBox [placeholder]="'Custom Placeholder'"></searchBox>`
   template: `<h1>{{title}}</h1>
   <h2>{{hero.name}} details!</h2>
   <div>
