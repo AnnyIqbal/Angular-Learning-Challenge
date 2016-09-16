@@ -104,7 +104,7 @@ export class Mobiles extends Ads {
                 <li id="button" role="presentation">
                     <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" onclick="fieldsEmptied();">
                         <!--class="btn btn-primary"-->
-                        <img src="Images/posturad.png" alt="Post Ad" /> 
+                        <img [src]="postAd" alt="Post Ad" /> 
                     </a>
                 </li>
             </ul>
@@ -146,6 +146,7 @@ export class Mobiles extends Ads {
 })
 
 export class NavMenu { 
+    postAd: string = "Images/posturad.png";
 
 ad : any[] = [ // hard coded array for ad listings
     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png")},
