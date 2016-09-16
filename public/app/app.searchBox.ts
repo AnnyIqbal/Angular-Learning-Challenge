@@ -2,16 +2,20 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'searchBox', 
-  template: `<h3> Search By Ad Title</h3>
-    <label for="search"> Search by ad title </label>
-    <input type="text"  [placeholder]="'Custom Placeholder'" id= "search" #input />
-    <button class="clear-btn" (click)="clear(input)">Clear </button>`,
-  styles: [`.clear-btn {
-      background-color: rgb(72, 95, 249);
-      color: white;
-      width: 60px;
-      height: 22px;
-    }`]
+  template: `<span> Search By Ad Title
+    <label for="search" class="sr-only"> Search by ad title </label>
+    <input type="text" [placeholder]="'Search'" id= "search" #input />
+    <button class="clear-btn" (click)="clear(input)">Clear </button>
+    </span>`,
+  styles: [`
+  h1 {
+    display: inline;
+  }
+  .clear-btn {
+    background-color: rgb(72, 95, 249);
+    color: white;
+  }
+  `]
   // templateURL: 'app.searchBox.html',
   // styleURLs: ['app.searchBox.css']
 })
