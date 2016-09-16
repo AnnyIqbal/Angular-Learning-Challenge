@@ -160,7 +160,7 @@ ad : any[] = [ // hard coded array for ad listings
     {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg")}
 ]; // objects are pushed dynamically whenever a user posts ad
 
- pushAd(): void { // pushing the posted ads in array and displaying in appropriate tab    
+/* pushAd(): void { // pushing the posted ads in array and displaying in appropriate tab    
 
         // selected ad category
         var cat: string = (document.getElementById("category") as HTMLInputElement).value; // type casting string into HTMLInputElement
@@ -485,5 +485,6 @@ for(var i = 0; i < this.ad.length; i++) {
 
         document.getElementById("mobiles").innerHTML += this.showMobile;
     }
-}
+    this.pushAd();
+}*/
 }

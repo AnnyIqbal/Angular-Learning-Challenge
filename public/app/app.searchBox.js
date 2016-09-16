@@ -9,17 +9,24 @@ var core_1 = require('@angular/core');
 var SearchBox = (function () {
     function SearchBox() {
         this.text = "Search";
+        this.search = new core_1.EventEmitter();
     }
     SearchBox.prototype.clear = function (input) {
         input.value = '';
     };
+    SearchBox.prototype.onSearch = function (searchText) {
+        this.search.emit(searchText);
+    };
     __decorate([
         core_1.Input('placeholder')
     ], SearchBox.prototype, "text");
+    __decorate([
+        core_1.Output()
+    ], SearchBox.prototype, "search");
     SearchBox = __decorate([
         core_1.Component({
             selector: 'searchBox',
-            template: "<span> Search By Ad Title\n    <label for=\"search\" class=\"sr-only\"> Search by ad title </label>\n    <input type=\"text\" [placeholder]=\"'Search'\" id= \"search\" #input />\n    <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>\n    </span>",
+            template: "<span> Search By Ad Title\n    <label for=\"search\" class=\"sr-only\"> Search by ad title </label>\n    <input type=\"text\" [placeholder]=\"'Search'\" id= \"search\" #input (keydown.enter) = \"onSearch(input.value)\" />\n    <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>\n    </span>",
             styles: ["\n  span {\n    font-weight: bold;\n  }\n  .clear-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n  }\n  input {\n    width: 50%;\n  }\n  "]
         })
     ], SearchBox);
