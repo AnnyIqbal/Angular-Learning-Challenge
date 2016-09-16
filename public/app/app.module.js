@@ -11,14 +11,15 @@ var forms_1 = require('@angular/forms');
 // import { AppComponent }  from './app.component';
 var app_searchBox_1 = require('./app.searchBox');
 var app_header_1 = require('./app.header');
+var app_navMenu_1 = require('./app.navMenu');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_searchBox_1.SearchBox, app_header_1.Jumbotron],
-            bootstrap: [app_searchBox_1.SearchBox, app_header_1.Jumbotron] // AppComponent,
+            declarations: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu],
+            bootstrap: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu] // AppComponent,
         })
     ], AppModule);
     return AppModule;

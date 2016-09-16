@@ -20,7 +20,7 @@ var SearchBox = (function () {
         core_1.Component({
             selector: 'searchBox',
             template: "<span> Search By Ad Title\n    <label for=\"search\" class=\"sr-only\"> Search by ad title </label>\n    <input type=\"text\" [placeholder]=\"'Search'\" id= \"search\" #input />\n    <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>\n    </span>",
-            styles: ["\n  h1 {\n    display: inline;\n  }\n  .clear-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n    // width: 60px;\n    // height: 22px;\n  }\n  "]
+            styles: ["\n  span {\n    font-weight: bold;\n  }\n  .clear-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n  }\n  input {\n    width: 50%;\n  }\n  "]
         })
     ], SearchBox);
     return SearchBox;

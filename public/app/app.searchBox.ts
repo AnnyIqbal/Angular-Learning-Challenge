@@ -8,12 +8,15 @@ import { Component, Input } from '@angular/core';
     <button class="clear-btn" (click)="clear(input)">Clear </button>
     </span>`,
   styles: [`
-  h1 {
-    display: inline;
+  span {
+    font-weight: bold;
   }
   .clear-btn {
     background-color: rgb(72, 95, 249);
     color: white;
+  }
+  input {
+    width: 50%;
   }
   `]
   // templateURL: 'app.searchBox.html',

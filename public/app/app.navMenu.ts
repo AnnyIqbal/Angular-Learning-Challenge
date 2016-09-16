@@ -1,0 +1,123 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'navMenu', 
+  template: `
+<!-- Navigation Tabs-->     
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#all" aria-controls="all" role="tab" data-toggle="tab">
+                        <img src="Images/all.png" alt="all" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="bTab">
+                    <a href="#books" aria-controls="books" role="tab" data-toggle="tab">
+                        <img src="Images/b1.png" alt="books" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="cTab">
+                    <a href="#cars" aria-controls="cars" role="tab" data-toggle="tab">
+                        <img src="Images/c6.png" alt="cars" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="mTab">
+                    <a href="#mobiles" aria-controls="mobiles" role="tab" data-toggle="tab">
+                       <img src="Images/m1.png" alt="mobiles" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li id="button" role="presentation">
+                    <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" onclick="fieldsEmptied();">
+                        <!--class="btn btn-primary"-->
+                        <img src="Images/posturad.png" alt="Post Ad" /> 
+                    </a>
+                </li>
+            </ul>
+
+            <!--Tab Panes-->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="all">
+                    <div id="p1">
+                        <h1> All Ads </h1>
+                    </div> 
+                    <div id="p2" class="hidden">
+                        <h1> All Ads </h1>
+                    </div> 
+                    <div id="p3" class="hidden">
+                        <h1> All Ads </h1>
+                    </div>                 
+                    <nav aria-label="Page navigation"> <!-- pagination list -->
+                        <ul class="pagination">
+                            <!--<li><span><span aria-hidden="true">&laquo;</span></span></li>-->
+                            <li class="active"><a href="#p1" onclick="activatePage('p1', this);">1</a></li>
+                            <li><a href="#p2" onclick="activatePage('p2', this);">2</a></li>
+                            <li><a href="#p3" onclick="activatePage('p3', this);">3</a></li>
+                            <!--<li><span><span aria-hidden="true">&raquo;</span></span></li>-->
+                        </ul>
+                    </nav> <!-- /pagination list -->
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="books">
+                    <h1> Books </h1>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="cars">
+                    <h1> Cars </h1>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="mobiles">
+                    <h1> Mobiles </h1>
+                </div>
+            </div>
+        </div>
+<!--/Navigation Tabs-->`,
+  styles: [`
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: baseline;
+    font-family: "Old English Text", Georgia, 'Times New Roman', Times, serif;
+    /*background-color: rgba(128,128,128,0.25);*/
+}
+figure img {
+    height: 100px;
+    width: 100px;
+}
+li a img {
+    height: 50px;
+    width: 50px;
+}
+#button {
+    margin-left: 46%;
+    /*this setting was for #button a element
+    margin-left: 52%; 
+    margin-top: 20px;*/
+}
+#button a img {
+    width: 150px;
+    height: 50px;
+}
+/*this setting was for #button a element
+#button a:hover {
+    border-style: inset;
+    color: rgb(51,122,183);
+    background-color: white;
+    border: 2px solid rgb(51,122,183);
+}*/
+form {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+input, select {
+    width: 100%;
+    padding: 5px;
+}
+#post {
+    width: 100%;
+    padding: 10px;
+}
+#post:hover {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+`]
+})
+export class NavMenu { }
