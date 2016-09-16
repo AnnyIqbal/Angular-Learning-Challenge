@@ -4,11 +4,11 @@ import { FormsModule }   from '@angular/forms'
 // import { AppComponent }  from './app.component';
 import { SearchBox }     from './app.searchBox';
 import { Jumbotron }     from './app.header';
-import { NavMenu } from './app.navMenu';
+import { Ads, Books, Cars, Mobiles, NavMenu } from './app.navMenu';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ Jumbotron, SearchBox, NavMenu ], // AppComponent,
-  bootstrap:    [ Jumbotron, SearchBox, NavMenu ] // AppComponent,
+  declarations: [ Jumbotron, SearchBox, Ads, Books, Cars, Mobiles, NavMenu ], // AppComponent,
+  bootstrap:    [ Jumbotron, SearchBox, Ads, Books, Cars, Mobiles, NavMenu ] // AppComponent,
 })
 export class AppModule { }

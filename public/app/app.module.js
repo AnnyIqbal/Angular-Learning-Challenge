@@ -18,8 +18,8 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu],
-            bootstrap: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu] // AppComponent,
+            declarations: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.Ads, app_navMenu_1.Books, app_navMenu_1.Cars, app_navMenu_1.Mobiles, app_navMenu_1.NavMenu],
+            bootstrap: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.Ads, app_navMenu_1.Books, app_navMenu_1.Cars, app_navMenu_1.Mobiles, app_navMenu_1.NavMenu] // AppComponent,
         })
     ], AppModule);
     return AppModule;
