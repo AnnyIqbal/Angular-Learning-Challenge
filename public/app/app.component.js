@@ -23,7 +23,6 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            //template: `<searchBox [placeholder]="'Custom Placeholder'"></searchBox>`
             template: "<h1>{{title}}</h1>\n  <h2>{{hero.name}} details!</h2>\n  <div>\n    <label>id: </label>{{hero.id}}\n  </div>\n  <div>\n    <label>name: </label>\n      <input [(ngModel)]=\"hero.name\" placeholder=\"name\">\n    </div>"
         })
     ], AppComponent);

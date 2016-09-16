@@ -10,14 +10,15 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var app_searchBox_1 = require('./app.searchBox');
+var app_header_1 = require('./app.header');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, app_searchBox_1.SearchBox],
-            bootstrap: [app_component_1.AppComponent, app_searchBox_1.SearchBox]
+            declarations: [app_component_1.AppComponent, app_searchBox_1.SearchBox, app_header_1.Jumbotron],
+            bootstrap: [app_component_1.AppComponent, app_searchBox_1.SearchBox, app_header_1.Jumbotron]
         })
     ], AppModule);
     return AppModule;
