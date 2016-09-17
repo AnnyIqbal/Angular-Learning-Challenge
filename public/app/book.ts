@@ -50,6 +50,6 @@ export class Books extends Ads{
 export class DisplayBook {
     ad = [ // hard coded array for ad listings
     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png")},
-    {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png")},
+    {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png")}
 ]; // objects are pushed dynamically whenever a user posts ad
 } 
