@@ -74,17 +74,6 @@ exports.Mobiles = Mobiles;
 var NavMenu = (function () {
     function NavMenu() {
         this.postAd = "Images/posturad.png";
-        this.ad = [
-            { x: new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png") },
-            { x: new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png") },
-            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "Images/j1.jpg") },
-            { x: new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "Images/js.png") },
-            { x: new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "Images/vitz.jpg") },
-            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "Images/corolla.jpg") },
-            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "Images/cheryqq.jpg") },
-            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png") },
-            { x: new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
-        ]; // objects are pushed dynamically whenever a user posts ad
     }
     NavMenu = __decorate([
         core_1.Component({
