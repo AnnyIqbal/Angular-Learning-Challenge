@@ -10,9 +10,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var core_1 = require('@angular/core');
 var Ads = (function () {
     function Ads(priceOfObject, imageOfObject) {
@@ -131,6 +128,32 @@ var formInput = (function () {
                 }
             }
         } // </switch>
+    };
+    formInput.prototype.checkCategory = function () {
+        var cat = document.getElementById("category").value; // type casting string into HTMLInputElement
+        switch (cat) {
+            case 'book': {
+                document.getElementById("book").className = "show";
+                document.getElementById("car").className = "hidden";
+                document.getElementById("mobile").className = "hidden";
+                break;
+            }
+            case 'car': {
+                document.getElementById("car").className = "show";
+                document.getElementById("book").className = "hidden";
+                document.getElementById("mobile").className = "hidden";
+                break;
+            }
+            case 'mobile': {
+                document.getElementById("mobile").className = "show";
+                document.getElementById("book").className = "hidden";
+                document.getElementById("car").className = "hidden";
+                break;
+            }
+            default: {
+                document.getElementById("category").focus();
+            }
+        }
     };
     formInput.prototype.pushAd = function () {
         // selected ad category
@@ -265,10 +288,8 @@ var formInput = (function () {
         core_1.Component({
             selector: 'FormInput',
             templateUrl: 'app/app.formInput.html'
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], formInput);
     return formInput;
 }());
 exports.formInput = formInput;
-//# sourceMappingURL=app.formInput.js.map

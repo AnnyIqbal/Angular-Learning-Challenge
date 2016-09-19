@@ -28,28 +28,38 @@ export class Books extends Ads{
 
 @Component({
   selector: 'book',
-  template: `<div class="panel panel-primary">
+  template: `<ul>
+                    <li *ngFor="let item of ad">
+                    <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"> 
-                                    {{ad[0].x.subject}} 
+                                    {{item.x.subject}} 
                                 </h3>
                             </div>
                             <div class="panel-body row">
                                 <div class= "col-sm-4">
-                                    <img src={{this.ad[0].x.image}} alt="book" height="100" width="100" /> 
+                                    <img src={{item.x.image}} alt="book" height="100" width="100" /> 
                                 </div>
                                 <div class="col-sm-8"> 
-                                    <strong> Title: </strong> {{this.ad[0].x.title}} <br />
-                                    <strong> Author: </strong> {{this.ad[0].x.author}} <br />
-                                    <strong> Subject: </strong> {{this.ad[0].x.subject}} 
+                                    <strong> Title: </strong> {{item.x.title}} <br />
+                                    <strong> Author: </strong> {{item.x.author}} <br />
+                                    <strong> Subject: </strong> {{item.x.subject}} 
                                 </div>
                             </div>
-                            <div class="panel-footer text-right"> <strong>Price: Rs. {{this.ad[0].x.price}} /-</strong> </div> 
-                        </div>`
+                            <div class="panel-footer text-right"> <strong>Price: Rs. {{item.x.price}} /-</strong> </div> 
+                        </div>
+                        </li>
+               </ul>`,
+    styles: [`
+    li {
+        list-style-type: none;
+    }
+    `]
 })
 export class DisplayBook {
     ad = [ // hard coded array for ad listings
     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
     {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")}
 ]; // objects are pushed dynamically whenever a user posts ad
+
 } 
