@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
 import { SearchBox } from './app.searchBox';
 
 @Component({
   selector: 'my-app',
-  directives: [SearchBox],
+  //outputs: [SearchBox],
   template: `<searchBox (search)="onSearch($event)" text="Type Your Search Here"></searchBox>`
 })
 export class AppComponent { 
@@ -12,4 +11,3 @@ export class AppComponent {
     console.log(`From App : ${text}`);
   }
 }
-bootstrap(AppComponent);

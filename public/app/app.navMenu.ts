@@ -16,7 +16,7 @@ export class Books extends Ads{
     title : string;
     author : string;
     subject : string;
-    //img : string = "Images/b1.png"; //y working not???? i want to have img as an optional param having a default value 
+    //img : string = "app/Images/b1.png"; //y working not???? i want to have img as an optional param having a default value 
     
     // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
     constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, img: string) {
@@ -83,22 +83,22 @@ export class Mobiles extends Ads {
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a href="#all" aria-controls="all" role="tab" data-toggle="tab">
-                        <img src="Images/all.png" alt="all" class="img-responsive center-block" />
+                        <img src="app/Images/all.png" alt="all" class="img-responsive center-block" />
                     </a>
                 </li>
                 <li role="presentation" id="bTab">
                     <a href="#books" aria-controls="books" role="tab" data-toggle="tab">
-                        <img src="Images/b1.png" alt="books" class="img-responsive center-block" />
+                        <img src="app/Images/b1.png" alt="books" class="img-responsive center-block" />
                     </a>
                 </li>
                 <li role="presentation" id="cTab">
                     <a href="#cars" aria-controls="cars" role="tab" data-toggle="tab">
-                        <img src="Images/c6.png" alt="cars" class="img-responsive center-block" />
+                        <img src="app/Images/c6.png" alt="cars" class="img-responsive center-block" />
                     </a>
                 </li>
                 <li role="presentation" id="mTab">
                     <a href="#mobiles" aria-controls="mobiles" role="tab" data-toggle="tab">
-                       <img src="Images/m1.png" alt="mobiles" class="img-responsive center-block" />
+                       <img src="app/Images/m1.png" alt="mobiles" class="img-responsive center-block" />
                     </a>
                 </li>
                 <li id="button" role="presentation">
@@ -146,5 +146,5 @@ export class Mobiles extends Ads {
 })
 
 export class NavMenu { 
-    postAd: string = "Images/posturad.png";
+    postAd: string = "app/Images/posturad.png";
 }

@@ -15,11 +15,11 @@ figure img {
     width: 100px;
 }
 .jumbotron {
-    background-image: url("Images/bg10.png"); /* 6 8 12 wow*/
+    background-image: url("app/Images/bg10.png"); /* 6 8 12 wow*/
     background-size: 100% 100%; /* Image will stretch to cover entire content area */
     background-repeat: no-repeat;
     font-size: larger;
-    color: white;
+    color: white !important;
     /*border: 2px solid black;*/
 }
 li a img {

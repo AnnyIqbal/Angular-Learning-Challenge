@@ -36,8 +36,8 @@ exports.Cars = Cars;
 var DisplayCar = (function () {
     function DisplayCar() {
         this.ad = [
-            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "Images/corolla.jpg") },
-            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "Images/cheryqq.jpg") }
+            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg") },
+            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg") }
         ];
     }
     DisplayCar = __decorate([

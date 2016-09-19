@@ -37,8 +37,8 @@ exports.Mobiles = Mobiles;
 var DisplayMobile = (function () {
     function DisplayMobile() {
         this.ad = [
-            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "Images/j1.jpg") },
-            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png") }
+            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
+            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     DisplayMobile = __decorate([
