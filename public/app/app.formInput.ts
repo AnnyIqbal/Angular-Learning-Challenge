@@ -80,7 +80,7 @@ export class Mobiles extends Ads {
 
 @Component({
   selector: 'FormInput', 
-  templateUrl: 'app.formInput.html'
+  templateUrl: 'app/app.formInput.html'
 })
 export class formInput {
     ad : any[] = [ // hard coded array for ad listings

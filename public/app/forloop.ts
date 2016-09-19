@@ -2,12 +2,17 @@ import {Component} from '@angular/core';
 import {NgFor} from '@angular/common';
 
 @Component({
-    selector: 'my-app',
+    selector: 'for',
     template: `<ul>
                     <li *ngFor="let item of names"> Hello {{ item }}</li>
-               </ul>`
+               </ul>`,
+    styles: [`
+    li {
+        list-style-type: none;
+    }
+    `]
 })
-export class AppComponent { 
+export class Loop { 
     names: string[];
 
     constructor() {

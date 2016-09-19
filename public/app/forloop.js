@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var Loop = (function () {
+    function Loop() {
         this.names = ['Zia', 'Hira', 'Inam', 'Rehan', 'Tauha'];
     }
-    AppComponent = __decorate([
+    Loop = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<ul>\n                    <li *ngFor=\"let item of names\"> Hello {{ item }}</li>\n               </ul>"
+            selector: 'for',
+            template: "<ul>\n                    <li *ngFor=\"let item of names\"> Hello {{ item }}</li>\n               </ul>",
+            styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], Loop);
+    return Loop;
 }());
-exports.AppComponent = AppComponent;
+exports.Loop = Loop;
 //# sourceMappingURL=forloop.js.map
