@@ -1,80 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-export class Ads {
-    cName : string;
-    price: number;
-    image: string;
-
-    constructor(priceOfObject: number, imageOfObject: string) {
-        this.price = priceOfObject;
-        this.image = imageOfObject;
-    }
-}
-
-export class Books extends Ads{ 
-    cName = "Books";
-    title : string;
-    author : string;
-    subject : string;
-    //img : string = "app/Images/b1.png"; //y working not???? i want to have img as an optional param having a default value 
-    
-    // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
-    constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, img: string) {
-        super(priceOfBook, img); 
-        this.title = titleOfBook;
-        this.author = authorOfBook;
-        this.subject = subjectOfBook;
-    }
-
-    display(): string { //returns all attributes with html wrapping
-        return ("<strong> Title: </strong> " + this.title + "<br /> <strong> Author: </strong>" + this.author + "<br /> <strong> Subject: </strong>" + this.subject);
-    }
-}
-
-export class Cars extends Ads {
-    cName = "Cars";
-    name : string;
-    company : string;
-    model : number;
-    engine: number;
-    color:string;
-
-    constructor(nameOfCar: string, companyOfCar: string, modelOfCar: number, engineOfCar: number, colorOfCar: string, priceOfCar: number, img: string) {
-        super(priceOfCar, img);
-        this.name = nameOfCar;
-        this.company = companyOfCar;
-        this.model = modelOfCar;
-        this.engine = engineOfCar;
-        this.color = colorOfCar;
-    }
-
-    display(): string { //returns all attributes with html wrapping
-         return ("<strong> Name: </strong>" + this.name + "<br /> <strong> Company: </strong>" + this.company + "<br /> <strong> Model: </strong>" + this.model + "<br /> <strong> Engine: </strong> " + this.engine + "cc <br /> <strong> Color: </strong>" + this.color);
-    }
-}
-
-export class Mobiles extends Ads {
-    cName = "Mobiles";
-    model: string;
-    company: string;
-    color: string;
-    screenSize: number;
-
-    constructor(modelOfMobile: string, companyOfMobile: string, colorOfMobile: string, screenSizeOfMobile: number, priceOfMobile: number, img: string) {
-        super(priceOfMobile, img);
-        this.model = modelOfMobile;
-        this.company = companyOfMobile;
-        this.color = colorOfMobile;
-        this.screenSize = screenSizeOfMobile;
-        this.price = priceOfMobile;
-        this.image = img;
-    }
-
-    display(): string { //returns all attributes with html wrapping
-        return ("<strong> Model: </strong>" + this.model + "<br /> <strong> Company: </strong>" + this.company + "<br /> <strong> Color: </strong>" + this.color +  "<br /> <strong> Screen Size: </strong>" + this.screenSize);
-    }
-}
-
 @Component({
   selector: 'navMenu', 
   template: `
@@ -102,7 +27,7 @@ export class Mobiles extends Ads {
                     </a>
                 </li>
                 <li id="button" role="presentation">
-                    <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" onclick="fieldsEmptied();">
+                    <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" (click)="fieldsEmptied();">
                         <!--class="btn btn-primary"-->
                         <img [src]="postAd" alt="Post Ad" /> 
                     </a>
@@ -138,4 +63,13 @@ export class Mobiles extends Ads {
 
 export class NavMenu { 
     postAd: string = "app/Images/posturad.png";
+
+    fieldsEmptied(): void { // setting all form fields empty when nav bar's button PostAd is clicked
+    let inputs = document.getElementsByTagName("input");
+    for(let i = 0; i < inputs.length; i++) {
+        (<HTMLInputElement>inputs[i]).value = '';
+    }
+    // de-selecting the select category option in form
+    let select = (document.getElementById("category") as HTMLSelectElement).value = 'null';
+}
 }

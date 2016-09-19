@@ -1,4 +1,9 @@
 "use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,13 +14,256 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Ads = (function () {
+    function Ads(priceOfObject, imageOfObject) {
+        this.price = priceOfObject;
+        this.image = imageOfObject;
+    }
+    return Ads;
+}());
+exports.Ads = Ads;
+var Books = (function (_super) {
+    __extends(Books, _super);
+    // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
+    function Books(titleOfBook, authorOfBook, subjectOfBook, priceOfBook, img) {
+        _super.call(this, priceOfBook, img);
+        this.cName = "Books";
+        this.img = "app/Images/b1.png";
+        this.title = titleOfBook;
+        this.author = authorOfBook;
+        this.subject = subjectOfBook;
+    }
+    Books.prototype.display = function () {
+        return ("<strong> Title: </strong> " + this.title + "<br /> <strong> Author: </strong>" + this.author + "<br /> <strong> Subject: </strong>" + this.subject);
+    };
+    return Books;
+}(Ads));
+exports.Books = Books;
+var Cars = (function (_super) {
+    __extends(Cars, _super);
+    function Cars(nameOfCar, companyOfCar, modelOfCar, engineOfCar, colorOfCar, priceOfCar, img) {
+        _super.call(this, priceOfCar, img);
+        this.cName = "Cars";
+        this.name = nameOfCar;
+        this.company = companyOfCar;
+        this.model = modelOfCar;
+        this.engine = engineOfCar;
+        this.color = colorOfCar;
+    }
+    Cars.prototype.display = function () {
+        return ("<strong> Name: </strong>" + this.name + "<br /> <strong> Company: </strong>" + this.company + "<br /> <strong> Model: </strong>" + this.model + "<br /> <strong> Engine: </strong> " + this.engine + "cc <br /> <strong> Color: </strong>" + this.color);
+    };
+    return Cars;
+}(Ads));
+exports.Cars = Cars;
+var Mobiles = (function (_super) {
+    __extends(Mobiles, _super);
+    function Mobiles(modelOfMobile, companyOfMobile, colorOfMobile, screenSizeOfMobile, priceOfMobile, img) {
+        _super.call(this, priceOfMobile, img);
+        this.cName = "Mobiles";
+        this.model = modelOfMobile;
+        this.company = companyOfMobile;
+        this.color = colorOfMobile;
+        this.screenSize = screenSizeOfMobile;
+        this.price = priceOfMobile;
+        this.image = img;
+    }
+    Mobiles.prototype.display = function () {
+        return ("<strong> Model: </strong>" + this.model + "<br /> <strong> Company: </strong>" + this.company + "<br /> <strong> Color: </strong>" + this.color + "<br /> <strong> Screen Size: </strong>" + this.screenSize);
+    };
+    return Mobiles;
+}(Ads));
+exports.Mobiles = Mobiles;
 var formInput = (function () {
     function formInput() {
+        this.ad = [
+            { x: new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png") },
+            { x: new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png") },
+            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "Images/j1.jpg") },
+            { x: new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "Images/js.png") },
+            { x: new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "Images/vitz.jpg") },
+            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "Images/corolla.jpg") },
+            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "Images/cheryqq.jpg") },
+            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png") },
+            { x: new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
+        ]; // objects are pushed dynamically whenever a user posts ad
     }
+    formInput.prototype.isNotEmpty = function (id) {
+        var check = document.getElementById(id);
+        if (check.value.toString().length === 0) {
+            alert("This is a required field!"); //throw error
+            check.focus(); // set focus on the field
+        }
+        else {
+            return true;
+        }
+    };
+    formInput.prototype.validateForm = function () {
+        var cat = document.getElementById("category").value;
+        switch (cat) {
+            case "book": {
+                if (this.isNotEmpty("username") && this.isNotEmpty("email")) {
+                    if (this.isNotEmpty("Btitle") && this.isNotEmpty("author") && this.isNotEmpty("subject") && this.isNotEmpty("Bprice")) {
+                        this.pushAd();
+                    }
+                }
+                break;
+            }
+            case "car": {
+                if (this.isNotEmpty("username") && this.isNotEmpty("email")) {
+                    if (this.isNotEmpty("name") && this.isNotEmpty("Ccompany") && this.isNotEmpty("Cmodel") && this.isNotEmpty("engine") && this.isNotEmpty("Ccolor") && this.isNotEmpty("Cprice")) {
+                        this.pushAd();
+                    }
+                }
+                break;
+            }
+            case "mobile": {
+                if (this.isNotEmpty("username") && this.isNotEmpty("email")) {
+                    if (this.isNotEmpty("Mmodel") && this.isNotEmpty("Mcompany") && this.isNotEmpty("Mcolor") && this.isNotEmpty("screensize") && this.isNotEmpty("Mprice")) {
+                        this.pushAd();
+                    }
+                }
+                break;
+            }
+            default: {
+                if (this.isNotEmpty("username") && this.isNotEmpty("email")) {
+                    alert("Select a category please!"); // throw error
+                }
+            }
+        } // </switch>
+    };
+    formInput.prototype.pushAd = function () {
+        // selected ad category
+        var cat = document.getElementById("category").value; // type casting string into HTMLInputElement
+        //push the ad as an object in the ads array
+        switch (cat) {
+            case 'book': {
+                // getting all input values
+                var title = document.getElementById("Btitle").value; // type casting string into HTMLInputElement
+                var author = document.getElementById("author").value;
+                var subject = document.getElementById("subject").value;
+                var price = parseFloat(document.getElementById("Bprice").value);
+                var image = document.getElementById("Bimage").value; // C:\fakepath\filename.extension
+                var filename = image.slice(12, image.length); //filename.extension
+                var src = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
+                //creating new Books instance and pushing dynamically in the ad array
+                this.ad.push({ x: new Books(title, author, subject, price, src) }); // passing specific url for image upload, img must be at that location
+                document.getElementById("books").className = "tab-pane fade in active"; // activate books tab
+                document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
+                // display it in the All & Books tab
+                var showBook = void 0, lastIndex = this.ad.length - 1;
+                showBook = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.subject +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for book 
+                document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
+                document.getElementById("books").innerHTML += showBook;
+                document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
+                document.getElementById("bTab").className = 'active'; // activating the books tab
+                break;
+            }
+            case 'car': {
+                // getting all input values
+                var name_1 = document.getElementById("name").value; // type casting string into HTMLInputElement
+                var company = document.getElementById("Ccompany").value; // alternate way to type casting 
+                var model = parseFloat(document.getElementById("Cmodel").value);
+                var engine = parseFloat(document.getElementById("engine").value);
+                var color = document.getElementById("Ccolor").value;
+                var price = parseFloat(document.getElementById("Cprice").value);
+                var image = document.getElementById("Cimage").value; // C:\fakepath\filename.extension
+                var filename = image.slice(12, image.length); //filename.extension
+                var src = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
+                //creating new Cars instance and pushing dynamically in the ad array
+                this.ad.push({ x: new Cars(name_1, company, model, engine, color, price, src) });
+                document.getElementById("cars").className = "tab-pane fade in active"; // activate cars tab
+                document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
+                // display it in the All & Cars tab
+                var showCar = void 0, lastIndex = this.ad.length - 1;
+                showCar = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.name +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="car" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for car
+                document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
+                document.getElementById("cars").innerHTML += showCar;
+                document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
+                document.getElementById("cTab").className = 'active'; //activating the cars tab
+                break;
+            }
+            case 'mobile': {
+                // getting all input values
+                var model = document.getElementById("Mmodel").value; // type casting string into HTMLInputElement
+                var company = document.getElementById("Mcompany").value;
+                var color = document.getElementById("Mcolor").value;
+                var screenSize = parseFloat(document.getElementById("screensize").value);
+                var price = parseFloat(document.getElementById("Mprice").value);
+                var image = document.getElementById("Mimage").value; // C:\fakepath\filename.extension
+                var filename = image.slice(12, image.length); //filename.extension
+                var src = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
+                //creating new Mobiles instance and pushing dynamically in the ad array
+                this.ad.push({ x: new Mobiles(model, company, color, screenSize, price, src) });
+                document.getElementById("mobiles").className = "tab-pane fade in active"; // activate mobiles tab
+                document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
+                // display it in the All & Mobiles tab
+                var showMobile = void 0, lastIndex = this.ad.length - 1;
+                showMobile = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.company + ' ' + this.ad[lastIndex].x.model +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="mobile" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for mobile
+                document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
+                document.getElementById("mobiles").innerHTML += showMobile;
+                document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
+                document.getElementById("mTab").className = 'active'; //activating the mobiles tab
+                break;
+            }
+            default: {
+                alert("Error! select a proper category"); // ni pohnchenge yhn
+            }
+        } // </switch>
+        // hiding all form category divs
+        document.getElementById("book").className = "hidden";
+        document.getElementById("car").className = "hidden";
+        document.getElementById("mobile").className = "hidden";
+    };
     formInput = __decorate([
         core_1.Component({
             selector: 'FormInput',
-            template: "<div role=\"tabpanel\" class=\"tab-pane fade\" id=\"form\">\n                    <h1> POST AN AD </h1>\n                     <!--form for taking ad details -->\n                    <form action=\"Javascript:void(0)\" method=\"post\">  \n                                            \n                            <label for=\"username\" class=\"sr-only\"> Name </label>\n                            <input type=\"text\" name=\"username\" id=\"username\" placeholder=\"Name\" required autofocus />\n            <br /><br />\n                            <label for=\"email\" class=\"sr-only\"> Email </label>\n                            <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\" required />\n            <br /><br />\n                            <label for=\"contact number\" class=\"sr-only\"> Contact Number </label>\n                            <input type=\"number\" name=\"contactNum\" id=\"contact number\" placeholder=\"Contact Number\" />\n            <br /><br />\n                            <label for=\"category\" class=\"sr-only\"> Select Category </label>\n                            <select id=\"category\" onchange=\"checkCategory();\" >\n                                <!--onkeypress=\"checkCategory();\" oninput=\"checkCategory();\">-->\n                                <option value=\"null\" selected> Select Category </option>\n                                <option value=\"book\"> Book </option>\n                                <option value=\"car\"> Car </option>\n                                <option value=\"mobile\"> Mobile </option>\n                            </select>\n            <br /><br />\n                        \n                        <div id=\"book\" class=\"hidden\"> \n                            <label for=\"Btitle\" class=\"sr-only\"> Title </label>\n                            <input type=\"text\" name=\"title\" id=\"Btitle\" placeholder=\"Title\" />\n            <br /><br />\n                            <label for=\"author\" class=\"sr-only\"> Author </label>\n                            <input type=\"text\" name=\"author\" id=\"author\" placeholder=\"Author\" />\n            <br /><br />\n                            <label for=\"subject\" class=\"sr-only\"> Subject </label>\n                            <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Subject\" />\n            <br /><br />\n                            <label for=\"Bprice\" class=\"sr-only\"> Price in PKR </label>\n                            <input type=\"number\" name=\"price\" id=\"Bprice\" placeholder=\"Price in PKR\" />\n            <br /><br />\n                        <div class=\"wrapper\">\n                            <label for=\"Bimage\" class=\"sr-only\"> Upload Image </label>\n                            <input type=\"file\" name=\"pic\" id=\"Bimage\" data-toggle=\"tooltip\" title=\"Upload image from 'C:/Users/Public/Pictures/' directory\" />\n                        </div>\n            <br /><br />\n                        </div>\n\n                        <div id=\"car\" class=\"hidden\"> \n                            <label for=\"name\" class=\"sr-only\"> Name </label>\n                            <input type=\"text\" name=\"carname\" id=\"name\" placeholder=\"Name\" />\n            <br /><br />\n                            <label for=\"Ccompany\" class=\"sr-only\"> Company </label>\n                            <input type=\"text\" name=\"companyname\" id=\"Ccompany\" placeholder=\"Company\" />\n            <br /><br />\n                            <label for=\"Cmodel\" class=\"sr-only\"> Model </label>\n                            <input type=\"number\" name=\"model\" id=\"Cmodel\" placeholder=\"Model\" />\n            <br /><br />\n                            <label for=\"engine\" class=\"sr-only\"> Engine (in cc) </label>\n                            <input type=\"number\" name=\"engine\" id=\"engine\" placeholder=\"Engine (in cc)\" />\n            <br /><br />\n                            <label for=\"Ccolor\" class=\"sr-only\"> Color </label>\n                            <input type=\"text\" name=\"color\" id=\"Ccolor\" placeholder=\"Color\" />\n            <br /><br />\n                            <label for=\"Cprice\" class=\"sr-only\"> Price in PKR </label>\n                            <input type=\"number\" name=\"price\" id=\"Cprice\" placeholder=\"Price in PKR\" />\n            <br /><br />\n                        <div class=\"wrapper\">\n                            <label for=\"Cimage\" class=\"sr-only\"> Upload Image </label>\n                            <input type=\"file\" name=\"pic\" id=\"Cimage\" data-toggle=\"tooltip\" title=\"Upload image from 'C:/Users/Public/Pictures/' directory\" />\n                        </div>\n            <br /><br />\n                        </div>\n\n                        <div id=\"mobile\" class=\"hidden\"> \n                            <label for=\"Mmodel\" class=\"sr-only\"> Model </label>\n                            <input type=\"number\" name=\"model\" id=\"Mmodel\" placeholder=\"Model\" />\n            <br /><br />               \n                            <label for=\"Mcompany\" class=\"sr-only\"> Company </label>\n                            <input type=\"text\" name=\"companyname\" id=\"Mcompany\" placeholder=\"Company\" />\n            <br /><br />\n                            <label for=\"Mcolor\" class=\"sr-only\"> Color </label>\n                            <input type=\"text\" name=\"color\" id=\"Mcolor\" placeholder=\"Color\" />\n            <br /><br />\n                            <label for=\"screensize\" class=\"sr-only\"> Size of Screen (in inches) </label>\n                            <input type=\"number\" name=\"screensize\" id=\"screensize\" placeholder=\"Size of Screen (in inches)\" />\n            <br /><br />\n                            <label for=\"Mprice\" class=\"sr-only\"> Price in PKR </label>\n                            <input type=\"number\" name=\"price\" id=\"Mprice\" placeholder=\"Price in PKR\" />\n            <br /><br />    \n                        <div class=\"wrapper\">\n                            <label for=\"Mimage\" class=\"sr-only\"> Upload Image </label>\n                            <input type=\"file\" name=\"pic\" id=\"Mimage\" data-toggle=\"tooltip\" title=\"Upload image from 'C:/Users/Public/Pictures/' directory\" />\n                        </div>\n            <br /><br />\n                        </div>\n                        <label for=\"post\" class=\"sr-only\"> Post </label>\n                        <button type=\"button\" id=\"post\" class=\"btn btn-primary btn-block\" onclick=\"validateForm();\"> Publish Ad </button>\n            <br /><br />\n                    </form> <!-- /form -->\n                </div> <!-- /#form tab -->"
+            templateUrl: "app.formInput.html"
         }), 
         __metadata('design:paramtypes', [])
     ], formInput);

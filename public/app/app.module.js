@@ -11,21 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-//import { AppComponent }  from './app.component';
+var app_component_1 = require('./app.component');
 var app_searchBox_1 = require('./app.searchBox');
 var app_header_1 = require('./app.header');
 var app_navMenu_1 = require('./app.navMenu');
 var book_1 = require('./book');
 var mobile_1 = require('./mobile');
 var car_1 = require('./car');
+var app_pagination_1 = require('./app.pagination');
+var app_formInput_1 = require('./app.formInput');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar],
-            bootstrap: [app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar] // AppComponent,
+            declarations: [
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_formInput_1.formInput],
+            bootstrap: [
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_formInput_1.formInput] // AppComponent,
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
