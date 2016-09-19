@@ -149,22 +149,23 @@ var formInput = (function () {
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 // display it in the All & Books tab
                 var showBook = void 0, lastIndex = this.ad.length - 1;
-                showBook = '<div class="panel panel-primary">' +
-                    '<div class="panel-heading">' +
-                    '<h3 class="panel-title">' +
-                    this.ad[lastIndex].x.subject +
-                    '</h3>' +
-                    '</div>' +
-                    '<div class="panel-body row">' +
-                    '<div class= "col-sm-4">' +
-                    '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
-                    '</div>' +
-                    '<div class="col-sm-8">' +
-                    this.ad[lastIndex].x.display() +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
-                    '</div>'; // creating new panel with title and content for book 
+                showBook = '<book></book>';
+                // '<div class="panel panel-primary">' +
+                //                     '<div class="panel-heading">' +
+                //                         '<h3 class="panel-title">' + //title
+                //                             this.ad[lastIndex].x.subject +
+                //                         '</h3>' +
+                //                     '</div>' +
+                //                     '<div class="panel-body row">'+
+                //                         '<div class= "col-sm-4">' + // image
+                //                             '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
+                //                         '</div>' +
+                //                         '<div class="col-sm-8">' + // details
+                //                             this.ad[lastIndex].x.display() +
+                //                         '</div>' +
+                //                     '</div>' +
+                //                     '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                //                 '</div>'; // creating new panel with title and content for book 
                 document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
@@ -240,7 +241,7 @@ var formInput = (function () {
                     this.ad[lastIndex].x.display() +
                     '</div>' +
                     '</div>' +
-                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
                     '</div>'; // creating new panel with title and content for mobile
                 document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
                 document.getElementById("mobiles").innerHTML += showMobile;
@@ -260,7 +261,7 @@ var formInput = (function () {
     formInput = __decorate([
         core_1.Component({
             selector: 'FormInput',
-            templateUrl: "app.formInput.html"
+            templateUrl: 'app.formInput.html'
         })
     ], formInput);
     return formInput;

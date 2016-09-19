@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Jumbotron = (function () {
-    function Jumbotron() {
+var AppComponent = (function () {
+    function AppComponent() {
+        this.names = ['Zia', 'Hira', 'Inam', 'Rehan', 'Tauha'];
     }
-    Jumbotron = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            selector: 'header',
-            template: "<!--Jumbotron from bootstrap-->\n            <div id=\"header\" class=\"jumbotron\"> \n                <br /><br /><br /><br /><br />\n                <h1>Classified App</h1>\n            </div>"
+            selector: 'my-app',
+            template: "<ul>\n                    <li *ngFor=\"let item of names\"> Hello {{ item }}</li>\n               </ul>"
         }), 
         __metadata('design:paramtypes', [])
-    ], Jumbotron);
-    return Jumbotron;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.Jumbotron = Jumbotron;
-//# sourceMappingURL=app.header.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=forloop.js.map

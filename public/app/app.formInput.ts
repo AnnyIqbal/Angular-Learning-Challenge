@@ -1,4 +1,6 @@
  import { Component, Input } from '@angular/core';
+ import {DisplayBook} from './book' 
+
 export class Ads {
     cName : string;
     price: number;
@@ -78,7 +80,7 @@ export class Mobiles extends Ads {
 
 @Component({
   selector: 'FormInput', 
-  templateUrl: `app.formInput.html`
+  templateUrl: 'app.formInput.html'
 })
 export class formInput {
     ad : any[] = [ // hard coded array for ad listings
@@ -161,23 +163,25 @@ export class formInput {
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 
                 // display it in the All & Books tab
+                
                 let showBook : string, lastIndex: number = this.ad.length-1;
-                showBook = '<div class="panel panel-primary">' +
-                                    '<div class="panel-heading">' +
-                                        '<h3 class="panel-title">' + //title
-                                            this.ad[lastIndex].x.subject +
-                                        '</h3>' +
-                                    '</div>' +
-                                    '<div class="panel-body row">'+
-                                        '<div class= "col-sm-4">' + // image
-                                            '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
-                                        '</div>' +
-                                        '<div class="col-sm-8">' + // details
-                                            this.ad[lastIndex].x.display() +
-                                        '</div>' +
-                                    '</div>' +
-                                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
-                                '</div>'; // creating new panel with title and content for book 
+                showBook = '<book></book>';
+                // '<div class="panel panel-primary">' +
+                //                     '<div class="panel-heading">' +
+                //                         '<h3 class="panel-title">' + //title
+                //                             this.ad[lastIndex].x.subject +
+                //                         '</h3>' +
+                //                     '</div>' +
+                //                     '<div class="panel-body row">'+
+                //                         '<div class= "col-sm-4">' + // image
+                //                             '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
+                //                         '</div>' +
+                //                         '<div class="col-sm-8">' + // details
+                //                             this.ad[lastIndex].x.display() +
+                //                         '</div>' +
+                //                     '</div>' +
+                //                     '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                //                 '</div>'; // creating new panel with title and content for book 
                 
                 document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
@@ -263,7 +267,7 @@ export class formInput {
                                             this.ad[lastIndex].x.display() +
                                         '</div>' +
                                     '</div>' +
-                                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
+                                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
                                 '</div>'; // creating new panel with title and content for mobile
 
                 document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
