@@ -164,7 +164,7 @@ export class NavMenu {
 
     fieldsEmptied(): void { // setting all form fields empty when nav bar's button PostAd is clicked
 
-    document.getElementById("button").innerHTML = '<FormInput></FormInput>';
+    //document.getElementById("button").innerHTML = '<FormInput></FormInput>';
         let inputs = document.getElementsByTagName("input");
         for(let i = 0; i < inputs.length; i++) {
             (<HTMLInputElement>inputs[i]).value = '';
