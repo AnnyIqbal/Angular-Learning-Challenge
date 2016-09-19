@@ -28,7 +28,6 @@ import { Component, Input } from '@angular/core';
                 </li>
                 <li id="button" role="presentation">
                     <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" (click)="fieldsEmptied();">
-                        <!--class="btn btn-primary"-->
                         <img [src]="postAd" alt="Post Ad" /> 
                     </a>
                 </li>
