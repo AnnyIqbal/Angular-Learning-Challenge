@@ -137,9 +137,13 @@ export class Mobiles extends Ads {
                     <h1> Mobiles </h1>
                     <mobile></mobile>
                 </div>
+                <div role="tabpanel" class="tab-pane fade" id="button">
+                    
+                    
+                </div>
             </div>
         </div>
-<!--/Navigation Tabs-->`,
+<!--/Navigation Tabs-->`
 })
 
 export class NavMenu { 
@@ -159,6 +163,8 @@ export class NavMenu {
     ]; // objects are pushed dynamically whenever a user posts ad
 
     fieldsEmptied(): void { // setting all form fields empty when nav bar's button PostAd is clicked
+
+    document.getElementById("button").innerHTML = '<FormInput></FormInput>';
         let inputs = document.getElementsByTagName("input");
         for(let i = 0; i < inputs.length; i++) {
             (<HTMLInputElement>inputs[i]).value = '';

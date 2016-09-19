@@ -88,7 +88,7 @@ var Loop = (function () {
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> {{ item }}.display()</li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of ad\">\n                        {{item}} +'.display()'\n                    </li>\n               </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);

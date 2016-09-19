@@ -82,7 +82,9 @@ export class Mobiles extends Ads {
 @Component({
     selector: 'for',
     template: `<ul>
-                    <li *ngFor="let item of ad"> {{ item }}.display()</li>
+                    <li *ngFor="let item of ad">
+                        {{item}} +'.display()'
+                    </li>
                </ul>`,
     styles: [`
     li {
@@ -91,7 +93,7 @@ export class Mobiles extends Ads {
     `]
 })
 export class Loop { 
-    names: string[];
+    
     ad : any[] = [ // hard coded array for ad listings
     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png")},
     {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png")},
@@ -103,6 +105,5 @@ export class Loop {
     {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png")},
     {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg")}
 ]; // objects are pushed dynamically whenever a user posts ad
-
 
 }

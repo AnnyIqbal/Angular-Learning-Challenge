@@ -1,5 +1,7 @@
  import { Component, Input } from '@angular/core';
- import {DisplayBook} from './book' 
+ import {DisplayBook} from './book';
+ import {DisplayCar} from './car';
+ import {DisplayMobile} from './mobile'; 
 
 export class Ads {
     cName : string;
@@ -192,22 +194,6 @@ export class formInput {
                 
                 let showBook : string, lastIndex: number = this.ad.length-1;
                 showBook = '<book></book>';
-                // '<div class="panel panel-primary">' +
-                //                     '<div class="panel-heading">' +
-                //                         '<h3 class="panel-title">' + //title
-                //                             this.ad[lastIndex].x.subject +
-                //                         '</h3>' +
-                //                     '</div>' +
-                //                     '<div class="panel-body row">'+
-                //                         '<div class= "col-sm-4">' + // image
-                //                             '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
-                //                         '</div>' +
-                //                         '<div class="col-sm-8">' + // details
-                //                             this.ad[lastIndex].x.display() +
-                //                         '</div>' +
-                //                     '</div>' +
-                //                     '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
-                //                 '</div>'; // creating new panel with title and content for book 
                 
                 document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
@@ -236,22 +222,7 @@ export class formInput {
                 
                 // display it in the All & Cars tab
                 let showCar : string, lastIndex: number = this.ad.length-1;
-                showCar = '<div class="panel panel-primary">' +
-                                    '<div class="panel-heading">' +
-                                        '<h3 class="panel-title">' + //title
-                                            this.ad[lastIndex].x.name +
-                                        '</h3>' +
-                                    '</div>' +
-                                    '<div class="panel-body row">'+
-                                        '<div class= "col-sm-4">' + //image
-                                            '<img src=' + this.ad[lastIndex].x.image + ' alt="car" height="100" width="100" />' +
-                                        '</div>' +
-                                        '<div class="col-sm-8">' + // details
-                                            this.ad[lastIndex].x.display() +
-                                        '</div>' +
-                                    '</div>' +
-                                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
-                                '</div>'; // creating new panel with title and content for car
+                showCar = '<car></car>';
                 
                 document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
                 document.getElementById("cars").innerHTML += showCar;
@@ -279,23 +250,8 @@ export class formInput {
 
                 // display it in the All & Mobiles tab
                 let showMobile : string, lastIndex: number = this.ad.length-1;
-                showMobile ='<div class="panel panel-primary">' +
-                                    '<div class="panel-heading">' +
-                                        '<h3 class="panel-title">' + //title
-                                            this.ad[lastIndex].x.company + ' ' + this.ad[lastIndex].x.model +
-                                        '</h3>' +
-                                    '</div>' +
-                                    '<div class="panel-body row">'+
-                                        '<div class= "col-sm-4">' + //image
-                                            '<img src=' + this.ad[lastIndex].x.image + ' alt="mobile" height="100" width="100" />' +
-                                        '</div>' +
-                                        '<div class="col-sm-8">' + // details
-                                            this.ad[lastIndex].x.display() +
-                                        '</div>' +
-                                    '</div>' +
-                                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
-                                '</div>'; // creating new panel with title and content for mobile
-
+                showMobile = '<mobile></mobile>';
+                
                 document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
                 document.getElementById("mobiles").innerHTML += showMobile;
 
