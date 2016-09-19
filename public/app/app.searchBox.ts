@@ -27,8 +27,7 @@ export class SearchBox {
   @Input('placeholder')
   text : string = "Search";
 
-  @Output()
-  search = new EventEmitter();
+  @Output() search = new EventEmitter();
 
   clear(input) {
     input.value = '';
