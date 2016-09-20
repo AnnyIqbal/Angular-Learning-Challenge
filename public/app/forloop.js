@@ -21,37 +21,118 @@ var Loop = (function () {
             { x: new app_navMenu_1.Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
-    Loop.prototype.displayAd = function (item) {
-        document.getElementById("all").innerHTML += item.x.display();
-        // switch(item.x.cName) {
-        //     case 'Books': {
-        //         document.getElementById("p1").innerHTML += '<book></book>';
-        //     }
-        //      case 'Cars': {
-        //         document.getElementById("p1").innerHTML += '<car></car>';
-        //     }
-        //      case 'Mobiles': {
-        //         document.getElementById("p1").innerHTML += '<mobile></mobile>';
-        //     }
-        //     // default: {
-        //     //     alert("Error!"); // yahan pohnchenge hi nhi hopefully
-        //     // }
-        // }
+    Loop.prototype.displayAd = function () {
+        // display the All tab
+        var a;
+        for (var i = 0; i < this.ad.length; i++) {
+            var classDeterminator = this.ad[i].x.cName; // returns class name 
+            switch (classDeterminator) {
+                case 'Books': {
+                    a = '<div class="panel panel-primary">' +
+                        '<div class="panel-heading">' +
+                        '<h3 class="panel-title">' +
+                        this.ad[i].x.subject +
+                        '</h3>' +
+                        '</div>' +
+                        '<div class="panel-body row">' +
+                        '<div class= "col-sm-4">' +
+                        '<img src=' + this.ad[i].x.image + ' alt="book" height="100" width="100" />' +
+                        '</div>' +
+                        '<div class="col-sm-8">' +
+                        this.ad[i].x.display() +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' +
+                        '</div>'; // creates new panel for book
+                    // setting 4 ads per page
+                    if (i <= 3) {
+                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    }
+                    else if (i >= 4 && i <= 7) {
+                        document.getElementById("p2").innerHTML += a;
+                    }
+                    else if (i >= 8) {
+                        document.getElementById("p3").innerHTML += a;
+                    }
+                    break;
+                }
+                case 'Cars': {
+                    a = '<div class="panel panel-primary">' +
+                        '<div class="panel-heading">' +
+                        '<h3 class="panel-title">' +
+                        this.ad[i].x.name +
+                        '</h3>' +
+                        '</div>' +
+                        '<div class="panel-body row">' +
+                        '<div class= "col-sm-4">' +
+                        '<img src=' + this.ad[i].x.image + ' alt="car" height="100" width="100" />' +
+                        '</div>' +
+                        '<div class="col-sm-8">' +
+                        this.ad[i].x.display() +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' +
+                        '</div>'; // creates new panel for car
+                    // setting 4 ads per page
+                    if (i <= 3) {
+                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    }
+                    else if (i >= 4 && i <= 7) {
+                        document.getElementById("p2").innerHTML += a;
+                    }
+                    else if (i >= 8) {
+                        document.getElementById("p3").innerHTML += a;
+                    }
+                    break;
+                }
+                case 'Mobiles': {
+                    a = '<div class="panel panel-primary">' +
+                        '<div class="panel-heading">' +
+                        '<h3 class="panel-title">' +
+                        this.ad[i].x.company + ' ' + this.ad[i].x.model +
+                        '</h3>' +
+                        '</div>' +
+                        '<div class="panel-body row">' +
+                        '<div class= "col-sm-4">' +
+                        '<img src=' + this.ad[i].x.image + ' alt="mobile" height="100" width="100" />' +
+                        '</div>' +
+                        '<div class="col-sm-8">' +
+                        this.ad[i].x.display() +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' +
+                        '</div>'; // creates new panel for mobile
+                    // setting 4 ads per page
+                    if (i <= 3) {
+                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    }
+                    else if (i >= 4 && i <= 7) {
+                        document.getElementById("p2").innerHTML += a;
+                    }
+                    else if (i >= 8) {
+                        document.getElementById("p3").innerHTML += a;
+                    }
+                    break;
+                }
+                default: {
+                    alert("Error!"); // yahan pohnchenge hi nhi hopefully
+                }
+            } // switch ends
+        } // for-loop ends
         //     var bookArray = [];
         //     if(item.x.cName === 'Books') {
         //         bookArray.push(item);
-        //     }
-        //     else if(item.x.cName === 'Cars') {
-        //         document.getElementById("all").innerHTML += '<car></car>';
-        //     }
-        //     else if(item.x.cName === 'Mobiles') {
-        //         document.getElementById("all").innerHTML += '<mobile></mobile>';
         //     }
     };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> \n                        {{displayAd(item)}} \n                    </li>\n               </ul>",
+            template: '{{displayAd()}}',
+            // template: `<ul>
+            //                 <li *ngFor="let item of ad"> 
+            //                     {{displayAd(item)}} 
+            //                 </li>
+            //            </ul>`,
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);
