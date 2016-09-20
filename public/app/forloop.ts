@@ -6,7 +6,9 @@ import {allAds} from './allads';
 @Component({
     selector: 'for',
     template: `<ul>
-                    <li *ngFor="let item of ad"> {{displayCorrectObject(item)}} </li>
+                    <li *ngFor="let item of ad"> 
+                        {{displayAd(item)}} 
+                    </li>
                </ul>`,
     styles: [`
     li {
@@ -28,38 +30,26 @@ export class Loop {
     {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg")}
 ]; // objects are pushed dynamically whenever a user posts ad
 
-displayCorrectObject(item) {
-    // let z: boolean; 
-    // if(item.x.cName === 'Cars') {
-    //     z=true;
+displayAd(item) {
+  
+    document.getElementById("all").innerHTML += item.x.display();
+    // switch(item.x.cName) {
+    //     case 'Books': {
+    //         document.getElementById("p1").innerHTML += '<book></book>';
+    //     }
+    //      case 'Cars': {
+    //         document.getElementById("p1").innerHTML += '<car></car>';
+    //     }
+    //      case 'Mobiles': {
+    //         document.getElementById("p1").innerHTML += '<mobile></mobile>';
+    //     }
+    //     // default: {
+    //     //     alert("Error!"); // yahan pohnchenge hi nhi hopefully
+    //     // }
     // }
-    // else {
-    //     z=false;
-    // }
-
-    
-    // console.log(z);
-    //document.getElementById("all").innerHTML += 'item.x.display()';
-    switch(item.x.cName) {
-        case 'Books': {
-            document.getElementById("all").innerHTML += '<book></book>';
-        }
-         case 'Cars': {
-            document.getElementById("p1").innerHTML += '<car></car>';
-        }
-         case 'Mobiles': {
-            document.getElementById("p1").innerHTML += '<mobile></mobile>';
-        }
-        // default: {
-        //     alert("Error!"); // yahan pohnchenge hi nhi hopefully
-        // }
-    }
 //     var bookArray = [];
 //     if(item.x.cName === 'Books') {
 //         bookArray.push(item);
-//         document.getElementById("all").innerHTML += '<book></book>';
-//         //item.x.display();
-//         //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
 //     }
 //     else if(item.x.cName === 'Cars') {
 //         document.getElementById("all").innerHTML += '<car></car>';

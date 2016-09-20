@@ -111,7 +111,22 @@ var formInput = (function () {
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 // display it in the All & Books tab
                 var showBook = void 0, lastIndex = this.ad.length - 1;
-                showBook = '<book></book>';
+                showBook = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.subject +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for book 
                 document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
@@ -135,7 +150,22 @@ var formInput = (function () {
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 // display it in the All & Cars tab
                 var showCar = void 0, lastIndex = this.ad.length - 1;
-                showCar = '<car></car>';
+                showCar = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.name +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="car" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for car
                 document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
                 document.getElementById("cars").innerHTML += showCar;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
@@ -158,7 +188,22 @@ var formInput = (function () {
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 // display it in the All & Mobiles tab
                 var showMobile = void 0, lastIndex = this.ad.length - 1;
-                showMobile = '<mobile></mobile>';
+                showMobile = '<div class="panel panel-primary">' +
+                    '<div class="panel-heading">' +
+                    '<h3 class="panel-title">' +
+                    this.ad[lastIndex].x.company + ' ' + this.ad[lastIndex].x.model +
+                    '</h3>' +
+                    '</div>' +
+                    '<div class="panel-body row">' +
+                    '<div class= "col-sm-4">' +
+                    '<img src=' + this.ad[lastIndex].x.image + ' alt="mobile" height="100" width="100" />' +
+                    '</div>' +
+                    '<div class="col-sm-8">' +
+                    this.ad[lastIndex].x.display() +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                    '</div>'; // creating new panel with title and content for mobile 
                 document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
                 document.getElementById("mobiles").innerHTML += showMobile;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button

@@ -21,33 +21,25 @@ var Loop = (function () {
             { x: new app_navMenu_1.Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
-    Loop.prototype.displayCorrectObject = function (item) {
-        // let z: boolean; 
-        // if(item.x.cName === 'Cars') {
-        //     z=true;
+    Loop.prototype.displayAd = function (item) {
+        document.getElementById("all").innerHTML += item.x.display();
+        // switch(item.x.cName) {
+        //     case 'Books': {
+        //         document.getElementById("p1").innerHTML += '<book></book>';
+        //     }
+        //      case 'Cars': {
+        //         document.getElementById("p1").innerHTML += '<car></car>';
+        //     }
+        //      case 'Mobiles': {
+        //         document.getElementById("p1").innerHTML += '<mobile></mobile>';
+        //     }
+        //     // default: {
+        //     //     alert("Error!"); // yahan pohnchenge hi nhi hopefully
+        //     // }
         // }
-        // else {
-        //     z=false;
-        // }
-        // console.log(z);
-        //document.getElementById("all").innerHTML += 'item.x.display()';
-        switch (item.x.cName) {
-            case 'Books': {
-                document.getElementById("all").innerHTML += '<book></book>';
-            }
-            case 'Cars': {
-                document.getElementById("p1").innerHTML += '<car></car>';
-            }
-            case 'Mobiles': {
-                document.getElementById("p1").innerHTML += '<mobile></mobile>';
-            }
-        }
         //     var bookArray = [];
         //     if(item.x.cName === 'Books') {
         //         bookArray.push(item);
-        //         document.getElementById("all").innerHTML += '<book></book>';
-        //         //item.x.display();
-        //         //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
         //     }
         //     else if(item.x.cName === 'Cars') {
         //         document.getElementById("all").innerHTML += '<car></car>';
@@ -59,7 +51,7 @@ var Loop = (function () {
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> {{displayCorrectObject(item)}} </li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> \n                        {{displayAd(item)}} \n                    </li>\n               </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);
