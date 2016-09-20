@@ -7,7 +7,7 @@ import {Ads, Books, Cars, Mobiles} from './app.navMenu';
     template: ``
 })
 
-export class allAds {
+export class allAds {/*
 // display the All tab
  a: string;
 
@@ -189,5 +189,5 @@ for(var i = 0; i < this.ad.length; i++) {
 
         document.getElementById("mobiles").innerHTML += showMobile;
     }
-    }
+    }*/
 }

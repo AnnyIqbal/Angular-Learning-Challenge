@@ -31,22 +31,35 @@ var Loop = (function () {
         // }
         // console.log(z);
         //document.getElementById("all").innerHTML += 'item.x.display()';
-        var bookArray = [];
-        if (item.x.cName === 'Books') {
-            bookArray.push(item);
-            document.getElementById("all").innerHTML += '<book></book>';
+        switch (item.x.cName) {
+            case 'Books': {
+                document.getElementById("all").innerHTML += '<book></book>';
+            }
+            case 'Cars': {
+                document.getElementById("p1").innerHTML += '<car></car>';
+            }
+            case 'Mobiles': {
+                document.getElementById("p1").innerHTML += '<mobile></mobile>';
+            }
         }
-        else if (item.x.cName === 'Cars') {
-            document.getElementById("all").innerHTML += '<car></car>';
-        }
-        else if (item.x.cName === 'Mobiles') {
-            document.getElementById("all").innerHTML += '<mobile></mobile>';
-        }
+        //     var bookArray = [];
+        //     if(item.x.cName === 'Books') {
+        //         bookArray.push(item);
+        //         document.getElementById("all").innerHTML += '<book></book>';
+        //         //item.x.display();
+        //         //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
+        //     }
+        //     else if(item.x.cName === 'Cars') {
+        //         document.getElementById("all").innerHTML += '<car></car>';
+        //     }
+        //     else if(item.x.cName === 'Mobiles') {
+        //         document.getElementById("all").innerHTML += '<mobile></mobile>';
+        //     }
     };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\"><allAds></allAds> {{displayCorrectObject(item)}} </li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> {{displayCorrectObject(item)}} </li>\n               </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);

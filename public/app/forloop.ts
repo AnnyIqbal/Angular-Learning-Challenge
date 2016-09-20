@@ -6,7 +6,7 @@ import {allAds} from './allads';
 @Component({
     selector: 'for',
     template: `<ul>
-                    <li *ngFor="let item of ad"><allAds></allAds> {{displayCorrectObject(item)}} </li>
+                    <li *ngFor="let item of ad"> {{displayCorrectObject(item)}} </li>
                </ul>`,
     styles: [`
     li {
@@ -40,19 +40,33 @@ displayCorrectObject(item) {
     
     // console.log(z);
     //document.getElementById("all").innerHTML += 'item.x.display()';
-    var bookArray = [];
-    if(item.x.cName === 'Books') {
-        bookArray.push(item);
-        document.getElementById("all").innerHTML += '<book></book>';
-        //item.x.display();
-        //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
+    switch(item.x.cName) {
+        case 'Books': {
+            document.getElementById("all").innerHTML += '<book></book>';
+        }
+         case 'Cars': {
+            document.getElementById("p1").innerHTML += '<car></car>';
+        }
+         case 'Mobiles': {
+            document.getElementById("p1").innerHTML += '<mobile></mobile>';
+        }
+        // default: {
+        //     alert("Error!"); // yahan pohnchenge hi nhi hopefully
+        // }
     }
-    else if(item.x.cName === 'Cars') {
-        document.getElementById("all").innerHTML += '<car></car>';
-    }
-    else if(item.x.cName === 'Mobiles') {
-        document.getElementById("all").innerHTML += '<mobile></mobile>';
-    }
-}
+//     var bookArray = [];
+//     if(item.x.cName === 'Books') {
+//         bookArray.push(item);
+//         document.getElementById("all").innerHTML += '<book></book>';
+//         //item.x.display();
+//         //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
+//     }
+//     else if(item.x.cName === 'Cars') {
+//         document.getElementById("all").innerHTML += '<car></car>';
+//     }
+//     else if(item.x.cName === 'Mobiles') {
+//         document.getElementById("all").innerHTML += '<mobile></mobile>';
+//     }
+ }
 
 }
