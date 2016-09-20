@@ -5,8 +5,8 @@ import {Ads, Books, Cars, Mobiles} from './app.navMenu';
 @Component({
     selector: 'for',
     template: `<ul>
-                    <li *ngFor="let item of ad">
-                        {{item}} +'.display()'
+                    <li *ngFor="let item of ad"> displayCorrectObject(item)
+                        // {{item}} +'.display()'
                     </li>
                </ul>`,
     styles: [`
@@ -28,5 +28,10 @@ export class Loop {
     {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png")},
     {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg")}
 ]; // objects are pushed dynamically whenever a user posts ad
+
+displayCorrectObject(item) {
+    console.log(item);
+    
+}
 
 }

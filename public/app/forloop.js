@@ -21,10 +21,13 @@ var Loop = (function () {
             { x: new app_navMenu_1.Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
+    Loop.prototype.displayCorrectObject = function (item) {
+        console.log(item);
+    };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\">\n                        {{item}} +'.display()'\n                    </li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> displayCorrectObject(item)\n                        // {{item}} +'.display()'\n                    </li>\n               </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);

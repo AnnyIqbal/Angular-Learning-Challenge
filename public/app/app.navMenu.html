@@ -1,0 +1,63 @@
+<!-- Navigation Tabs-->     
+        <div>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#all" aria-controls="all" role="tab" data-toggle="tab">
+                        <img src="app/Images/all.png" alt="all" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="bTab">
+                    <a href="#books" aria-controls="books" role="tab" data-toggle="tab">
+                        <img src="app/Images/b1.png" alt="books" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="cTab">
+                    <a href="#cars" aria-controls="cars" role="tab" data-toggle="tab">
+                        <img src="app/Images/c6.png" alt="cars" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li role="presentation" id="mTab">
+                    <a href="#mobiles" aria-controls="mobiles" role="tab" data-toggle="tab">
+                       <img src="app/Images/m1.png" alt="mobiles" class="img-responsive center-block" />
+                    </a>
+                </li>
+                <li id="button" role="presentation">
+                    <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab">
+                         <!--(click)="fieldsEmptied();">-->
+                        <img [src]="postAd" alt="Post Ad" /> 
+                    </a>
+                </li>
+            </ul>
+
+            <!--Tab Panes-->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="all">
+                    <div id="p1">
+                        <h1> All Ads </h1>
+                    </div> 
+                    <div id="p2" class="hidden">
+                        <h1> All Ads </h1>
+                    </div> 
+                    <div id="p3" class="hidden">
+                        <h1> All Ads </h1>
+                    </div>                 
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="books">
+                    <h1> Books </h1>
+                    <book></book>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="cars">
+                    <h1> Cars </h1>
+                    <car></car>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="mobiles">
+                    <h1> Mobiles </h1>
+                    <mobile></mobile>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="button">
+                    <FormInput></FormInput>
+                    
+                </div>
+            </div>
+        </div>
+<!--/Navigation Tabs-->
