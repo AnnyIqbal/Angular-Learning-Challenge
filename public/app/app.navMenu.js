@@ -12,9 +12,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var Ads = (function () {
-    function Ads(priceOfObject, imageOfObject) {
+    function Ads(priceOfObject) {
         this.price = priceOfObject;
-        this.image = imageOfObject;
     }
     return Ads;
 }());
@@ -22,10 +21,13 @@ exports.Ads = Ads;
 var Books = (function (_super) {
     __extends(Books, _super);
     // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
-    function Books(titleOfBook, authorOfBook, subjectOfBook, priceOfBook, img) {
-        _super.call(this, priceOfBook, img);
+    function Books(titleOfBook, authorOfBook, subjectOfBook, priceOfBook, imgOfBook) {
+        _super.call(this, priceOfBook);
         this.cName = "Books";
-        this.img = "app/Images/b1.png";
+        this.img = "Images/b1.png";
+        if (imgOfBook) {
+            this.img = imgOfBook;
+        }
         this.title = titleOfBook;
         this.author = authorOfBook;
         this.subject = subjectOfBook;
@@ -38,9 +40,13 @@ var Books = (function (_super) {
 exports.Books = Books;
 var Cars = (function (_super) {
     __extends(Cars, _super);
-    function Cars(nameOfCar, companyOfCar, modelOfCar, engineOfCar, colorOfCar, priceOfCar, img) {
-        _super.call(this, priceOfCar, img);
+    function Cars(nameOfCar, companyOfCar, modelOfCar, engineOfCar, colorOfCar, priceOfCar, imgOfCar) {
+        _super.call(this, priceOfCar);
         this.cName = "Cars";
+        this.img = "Images/c6.png";
+        if (imgOfCar) {
+            this.img = imgOfCar;
+        }
         this.name = nameOfCar;
         this.company = companyOfCar;
         this.model = modelOfCar;
@@ -55,15 +61,18 @@ var Cars = (function (_super) {
 exports.Cars = Cars;
 var Mobiles = (function (_super) {
     __extends(Mobiles, _super);
-    function Mobiles(modelOfMobile, companyOfMobile, colorOfMobile, screenSizeOfMobile, priceOfMobile, img) {
-        _super.call(this, priceOfMobile, img);
+    function Mobiles(modelOfMobile, companyOfMobile, colorOfMobile, screenSizeOfMobile, priceOfMobile, imgOfMobile) {
+        _super.call(this, priceOfMobile);
         this.cName = "Mobiles";
+        this.img = "Images/m3.png";
+        if (imgOfMobile) {
+            this.img = imgOfMobile;
+        }
         this.model = modelOfMobile;
         this.company = companyOfMobile;
         this.color = colorOfMobile;
         this.screenSize = screenSizeOfMobile;
         this.price = priceOfMobile;
-        this.image = img;
     }
     Mobiles.prototype.display = function () {
         return ("<strong> Model: </strong>" + this.model + "<br /> <strong> Company: </strong>" + this.company + "<br /> <strong> Color: </strong>" + this.color + "<br /> <strong> Screen Size: </strong>" + this.screenSize);

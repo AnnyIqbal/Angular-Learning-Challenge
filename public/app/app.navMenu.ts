@@ -4,11 +4,9 @@ import {NgFor} from '@angular/common';
 export class Ads {
     cName : string;
     price: number;
-    image: string;
 
-    constructor(priceOfObject: number, imageOfObject?: string) {
+    constructor(priceOfObject: number) {
         this.price = priceOfObject;
-        this.image = imageOfObject;
     }
 }
 
@@ -17,11 +15,14 @@ export class Books extends Ads{
     title : string;
     author : string;
     subject : string;
-    img = "app/Images/b1.png";
+    img : string = "Images/b1.png";
     
     // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
-    constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, img: string) {
-        super(priceOfBook, img); 
+    constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, imgOfBook?: string) {
+        super(priceOfBook);
+        if(imgOfBook) {
+            this.img = imgOfBook;
+        } 
         this.title = titleOfBook;
         this.author = authorOfBook;
         this.subject = subjectOfBook;
@@ -39,10 +40,13 @@ export class Cars extends Ads {
     model : number;
     engine: number;
     color:string;
-    img: "app/Images/c6.png";
+    img: string = "Images/c6.png";
 
-    constructor(nameOfCar: string, companyOfCar: string, modelOfCar: number, engineOfCar: number, colorOfCar: string, priceOfCar: number, img: string) {
-        super(priceOfCar, img);
+    constructor(nameOfCar: string, companyOfCar: string, modelOfCar: number, engineOfCar: number, colorOfCar: string, priceOfCar: number, imgOfCar?: string) {
+        super(priceOfCar);
+        if(imgOfCar) {
+            this.img = imgOfCar;
+        } 
         this.name = nameOfCar;
         this.company = companyOfCar;
         this.model = modelOfCar;
@@ -61,16 +65,18 @@ export class Mobiles extends Ads {
     company: string;
     color: string;
     screenSize: number;
-    img: "app/Images/b3.png";
+    img: string = "Images/m3.png";
 
-    constructor(modelOfMobile: string, companyOfMobile: string, colorOfMobile: string, screenSizeOfMobile: number, priceOfMobile: number, img: string) {
-        super(priceOfMobile, img);
+    constructor(modelOfMobile: string, companyOfMobile: string, colorOfMobile: string, screenSizeOfMobile: number, priceOfMobile: number, imgOfMobile?: string) {
+        super(priceOfMobile);
+        if(imgOfMobile) {
+            this.img = imgOfMobile;
+        }
         this.model = modelOfMobile;
         this.company = companyOfMobile;
         this.color = colorOfMobile;
         this.screenSize = screenSizeOfMobile;
         this.price = priceOfMobile;
-        this.image = img;
     }
 
     display(): string { //returns all attributes with html wrapping
