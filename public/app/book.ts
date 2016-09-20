@@ -1,30 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Ads {
-    cName : string;
-    price: number;
-    image: string;
-
-    constructor(priceOfObject: number, imageOfObject: string) {
-        this.price = priceOfObject;
-        this.image = imageOfObject;
-    }
-}
-
-export class Books extends Ads{ 
-    cName = "Books";
-    title : string;
-    author : string;
-    subject : string;
-    
-    // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
-    constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, img: string) {
-        super(priceOfBook, img); 
-        this.title = titleOfBook;
-        this.author = authorOfBook;
-        this.subject = subjectOfBook;
-    }
-}
+import {Ads, Books} from './app.navMenu';
 
 @Component({
   selector: 'book',

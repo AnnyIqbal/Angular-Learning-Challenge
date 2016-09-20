@@ -1,32 +1,6 @@
 import { Component } from '@angular/core';
+import {Ads, Cars} from './app.navMenu';
 
-export class Ads {
-    cName : string;
-    price: number;
-    image: string;
-
-    constructor(priceOfObject: number, imageOfObject: string) {
-        this.price = priceOfObject;
-        this.image = imageOfObject;
-    }
-}
-export class Cars extends Ads {
-    cName = "Cars";
-    name : string;
-    company : string;
-    model : number;
-    engine: number;
-    color:string;
-
-    constructor(nameOfCar: string, companyOfCar: string, modelOfCar: number, engineOfCar: number, colorOfCar: string, priceOfCar: number, img: string) {
-        super(priceOfCar, img);
-        this.name = nameOfCar;
-        this.company = companyOfCar;
-        this.model = modelOfCar;
-        this.engine = engineOfCar;
-        this.color = colorOfCar;
-    }
-}
 @Component({
   selector: 'car',
   template: `<ul>

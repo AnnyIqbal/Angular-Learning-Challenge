@@ -1,9 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,32 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var Ads = (function () {
-    function Ads(priceOfObject, imageOfObject) {
-        this.price = priceOfObject;
-        this.image = imageOfObject;
-    }
-    return Ads;
-}());
-exports.Ads = Ads;
-var Books = (function (_super) {
-    __extends(Books, _super);
-    // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
-    function Books(titleOfBook, authorOfBook, subjectOfBook, priceOfBook, img) {
-        _super.call(this, priceOfBook, img);
-        this.cName = "Books";
-        this.title = titleOfBook;
-        this.author = authorOfBook;
-        this.subject = subjectOfBook;
-    }
-    return Books;
-}(Ads));
-exports.Books = Books;
+var app_navMenu_1 = require('./app.navMenu');
 var DisplayBook = (function () {
     function DisplayBook() {
         this.ad = [
-            { x: new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
-            { x: new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") }
+            { x: new app_navMenu_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
+            { x: new app_navMenu_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     DisplayBook = __decorate([

@@ -1,9 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,34 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var Ads = (function () {
-    function Ads(priceOfObject, imageOfObject) {
-        this.price = priceOfObject;
-        this.image = imageOfObject;
-    }
-    return Ads;
-}());
-exports.Ads = Ads;
-var Mobiles = (function (_super) {
-    __extends(Mobiles, _super);
-    function Mobiles(modelOfMobile, companyOfMobile, colorOfMobile, screenSizeOfMobile, priceOfMobile, img) {
-        _super.call(this, priceOfMobile, img);
-        this.cName = "Mobiles";
-        this.model = modelOfMobile;
-        this.company = companyOfMobile;
-        this.color = colorOfMobile;
-        this.screenSize = screenSizeOfMobile;
-        this.price = priceOfMobile;
-        this.image = img;
-    }
-    return Mobiles;
-}(Ads));
-exports.Mobiles = Mobiles;
+var app_navMenu_1 = require('./app.navMenu');
 var DisplayMobile = (function () {
     function DisplayMobile() {
         this.ad = [
-            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
-            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
+            { x: new app_navMenu_1.Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
+            { x: new app_navMenu_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     DisplayMobile = __decorate([
