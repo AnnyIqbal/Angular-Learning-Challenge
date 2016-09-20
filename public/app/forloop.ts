@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {NgFor} from '@angular/common';
 import {Ads, Books, Cars, Mobiles} from './app.navMenu';
-import {allAds} from './allads';
 
 @Component({
     selector: 'for',
