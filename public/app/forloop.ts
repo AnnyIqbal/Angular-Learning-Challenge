@@ -1,13 +1,12 @@
 import {Component} from '@angular/core';
 import {NgFor} from '@angular/common';
 import {Ads, Books, Cars, Mobiles} from './app.navMenu';
+import {allAds} from './allads';
 
 @Component({
     selector: 'for',
     template: `<ul>
-                    <li *ngFor="let item of ad"> displayCorrectObject(item)
-                        // {{item}} +'.display()'
-                    </li>
+                    <li *ngFor="let item of ad"><allAds></allAds> {{displayCorrectObject(item)}} </li>
                </ul>`,
     styles: [`
     li {
@@ -30,8 +29,30 @@ export class Loop {
 ]; // objects are pushed dynamically whenever a user posts ad
 
 displayCorrectObject(item) {
-    console.log(item);
+    // let z: boolean; 
+    // if(item.x.cName === 'Cars') {
+    //     z=true;
+    // }
+    // else {
+    //     z=false;
+    // }
+
     
+    // console.log(z);
+    //document.getElementById("all").innerHTML += 'item.x.display()';
+    var bookArray = [];
+    if(item.x.cName === 'Books') {
+        bookArray.push(item);
+        document.getElementById("all").innerHTML += '<book></book>';
+        //item.x.display();
+        //'<book></book>'; // book k tag se loop hatana hoga agr ye thek chal gya to
+    }
+    else if(item.x.cName === 'Cars') {
+        document.getElementById("all").innerHTML += '<car></car>';
+    }
+    else if(item.x.cName === 'Mobiles') {
+        document.getElementById("all").innerHTML += '<mobile></mobile>';
+    }
 }
 
 }

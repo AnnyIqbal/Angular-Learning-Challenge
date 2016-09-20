@@ -22,12 +22,31 @@ var Loop = (function () {
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     Loop.prototype.displayCorrectObject = function (item) {
-        console.log(item);
+        // let z: boolean; 
+        // if(item.x.cName === 'Cars') {
+        //     z=true;
+        // }
+        // else {
+        //     z=false;
+        // }
+        // console.log(z);
+        //document.getElementById("all").innerHTML += 'item.x.display()';
+        var bookArray = [];
+        if (item.x.cName === 'Books') {
+            bookArray.push(item);
+            document.getElementById("all").innerHTML += '<book></book>';
+        }
+        else if (item.x.cName === 'Cars') {
+            document.getElementById("all").innerHTML += '<car></car>';
+        }
+        else if (item.x.cName === 'Mobiles') {
+            document.getElementById("all").innerHTML += '<mobile></mobile>';
+        }
     };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\"> displayCorrectObject(item)\n                        // {{item}} +'.display()'\n                    </li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of ad\"><allAds></allAds> {{displayCorrectObject(item)}} </li>\n               </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], Loop);
