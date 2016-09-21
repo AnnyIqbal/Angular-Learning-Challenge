@@ -12,8 +12,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var Ads = (function () {
-    function Ads(priceOfObject) {
+    function Ads(priceOfObject, imageOfObject) {
         this.price = priceOfObject;
+        this.image = imageOfObject;
     }
     return Ads;
 }());
@@ -22,12 +23,9 @@ var Books = (function (_super) {
     __extends(Books, _super);
     // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
     function Books(titleOfBook, authorOfBook, subjectOfBook, priceOfBook, imgOfBook) {
-        _super.call(this, priceOfBook);
+        _super.call(this, priceOfBook, imgOfBook);
         this.cName = "Books";
         this.img = "Images/b1.png";
-        if (imgOfBook) {
-            this.img = imgOfBook;
-        }
         this.title = titleOfBook;
         this.author = authorOfBook;
         this.subject = subjectOfBook;
@@ -41,12 +39,9 @@ exports.Books = Books;
 var Cars = (function (_super) {
     __extends(Cars, _super);
     function Cars(nameOfCar, companyOfCar, modelOfCar, engineOfCar, colorOfCar, priceOfCar, imgOfCar) {
-        _super.call(this, priceOfCar);
+        _super.call(this, priceOfCar, imgOfCar);
         this.cName = "Cars";
         this.img = "Images/c6.png";
-        if (imgOfCar) {
-            this.img = imgOfCar;
-        }
         this.name = nameOfCar;
         this.company = companyOfCar;
         this.model = modelOfCar;
@@ -62,12 +57,9 @@ exports.Cars = Cars;
 var Mobiles = (function (_super) {
     __extends(Mobiles, _super);
     function Mobiles(modelOfMobile, companyOfMobile, colorOfMobile, screenSizeOfMobile, priceOfMobile, imgOfMobile) {
-        _super.call(this, priceOfMobile);
+        _super.call(this, priceOfMobile, imgOfMobile);
         this.cName = "Mobiles";
         this.img = "Images/m3.png";
-        if (imgOfMobile) {
-            this.img = imgOfMobile;
-        }
         this.model = modelOfMobile;
         this.company = companyOfMobile;
         this.color = colorOfMobile;
@@ -80,20 +72,26 @@ var Mobiles = (function (_super) {
     return Mobiles;
 }(Ads));
 exports.Mobiles = Mobiles;
+var adsArray = (function () {
+    function adsArray() {
+        this.ad = [
+            { x: new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
+            { x: new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") },
+            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
+            { x: new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "app/Images/js.png") },
+            { x: new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "app/Images/vitz.jpg") },
+            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg") },
+            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg") },
+            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") },
+            { x: new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg") }
+        ]; // objects are pushed dynamically whenever a user posts ad
+    }
+    return adsArray;
+}());
+exports.adsArray = adsArray;
 var NavMenu = (function () {
     function NavMenu() {
         this.postAd = "app/Images/posturad.png";
-        this.ad = [
-            { x: new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png") },
-            { x: new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png") },
-            { x: new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "Images/j1.jpg") },
-            { x: new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "Images/js.png") },
-            { x: new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "Images/vitz.jpg") },
-            { x: new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "Images/corolla.jpg") },
-            { x: new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "Images/cheryqq.jpg") },
-            { x: new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png") },
-            { x: new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg") }
-        ]; // objects are pushed dynamically whenever a user posts ad
     }
     NavMenu.prototype.fieldsEmptied = function () {
         var inputs = document.getElementsByTagName("input");

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {Ads, Mobiles} from './app.navMenu';
+import {Ads, Mobiles, adsArray} from './app.navMenu';
 
 @Component({
   selector: 'mobile',
   template: `<ul>
-  <li  *ngFor="let item of ad">
+  <li  *ngFor="let item of admb">
   <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"> {{item.x.company }} {{item.x.model}} </h3>
@@ -31,7 +31,7 @@ import {Ads, Mobiles} from './app.navMenu';
     `]
 })
 export class DisplayMobile {
-    ad = [ // hard coded array for ad listings
+    admb = [ // hard coded array for ad listings
         {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg")},
         {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")}
     ]; // objects are pushed dynamically whenever a user posts ad

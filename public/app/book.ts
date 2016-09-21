@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {Ads, Books} from './app.navMenu';
+import {Ads, Books, adsArray} from './app.navMenu';
 
 @Component({
   selector: 'book',
   template: `<ul>
-                    <li *ngFor="let item of ad">
+                    <li *ngFor="let item of adbk">
                     <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"> 
@@ -50,7 +50,7 @@ import {Ads, Books} from './app.navMenu';
     `]
 })
 export class DisplayBook {
-    ad = [ // hard coded array for ad listings
+    adbk = [ // hard coded array for ad listings
     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
     {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")}
 ]; // objects are pushed dynamically whenever a user posts ad

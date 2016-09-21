@@ -4,9 +4,11 @@ import {NgFor} from '@angular/common';
 export class Ads {
     cName : string;
     price: number;
+    image: string;
 
-    constructor(priceOfObject: number) {
+    constructor(priceOfObject: number, imageOfObject: string) {
         this.price = priceOfObject;
+        this.image = imageOfObject;
     }
 }
 
@@ -19,10 +21,7 @@ export class Books extends Ads{
     
     // constructor automatically assigns the argument values to class attributes whenever a new instance is generated
     constructor(titleOfBook: string, authorOfBook: string, subjectOfBook: string, priceOfBook: number, imgOfBook?: string) {
-        super(priceOfBook);
-        if(imgOfBook) {
-            this.img = imgOfBook;
-        } 
+        super(priceOfBook, imgOfBook);
         this.title = titleOfBook;
         this.author = authorOfBook;
         this.subject = subjectOfBook;
@@ -43,10 +42,7 @@ export class Cars extends Ads {
     img: string = "Images/c6.png";
 
     constructor(nameOfCar: string, companyOfCar: string, modelOfCar: number, engineOfCar: number, colorOfCar: string, priceOfCar: number, imgOfCar?: string) {
-        super(priceOfCar);
-        if(imgOfCar) {
-            this.img = imgOfCar;
-        } 
+        super(priceOfCar, imgOfCar); 
         this.name = nameOfCar;
         this.company = companyOfCar;
         this.model = modelOfCar;
@@ -68,10 +64,7 @@ export class Mobiles extends Ads {
     img: string = "Images/m3.png";
 
     constructor(modelOfMobile: string, companyOfMobile: string, colorOfMobile: string, screenSizeOfMobile: number, priceOfMobile: number, imgOfMobile?: string) {
-        super(priceOfMobile);
-        if(imgOfMobile) {
-            this.img = imgOfMobile;
-        }
+        super(priceOfMobile, imgOfMobile);
         this.model = modelOfMobile;
         this.company = companyOfMobile;
         this.color = colorOfMobile;
@@ -84,6 +77,9 @@ export class Mobiles extends Ads {
     }
 }
 
+export class adsArray {
+
+}
 
 @Component({
   selector: 'navMenu', 
@@ -93,18 +89,6 @@ export class Mobiles extends Ads {
 export class NavMenu { 
 
     postAd: string = "app/Images/posturad.png";
-
-    ad : any[] = [ // hard coded array for ad listings
-        {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "Images/htmlcss.png")},
-        {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "Images/git.png")},
-        {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "Images/j1.jpg")},
-        {x : new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "Images/js.png")},
-        {x : new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "Images/vitz.jpg")},
-        {x : new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "Images/corolla.jpg")},
-        {x : new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "Images/cheryqq.jpg")},
-        {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "Images/S1.png")},
-        {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "Images/htc.jpg")}
-    ]; // objects are pushed dynamically whenever a user posts ad
 
     fieldsEmptied(): void { // setting all form fields empty when nav bar's button PostAd is clicked
 

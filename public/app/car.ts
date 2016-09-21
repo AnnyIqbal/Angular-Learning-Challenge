@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {Ads, Cars} from './app.navMenu';
+import {Ads, Cars, adsArray} from './app.navMenu';
 
 @Component({
   selector: 'car',
   template: `<ul>
-                 <li *ngFor="let item of ad">
+                 <li *ngFor="let item of adcr">
                 <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"> {{item.x.name}} </h3>
@@ -31,7 +31,7 @@ import {Ads, Cars} from './app.navMenu';
                 `]
 })
 export class DisplayCar{
-    ad = [ // hard coded array for ad listings
+    adcr = [ // hard coded array for ad listings
         {x : new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg")},
         {x : new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg")}
     ];
