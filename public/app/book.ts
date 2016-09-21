@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Ads, Books, adsArray} from './app.navMenu';
+import {Ads, Books} from './adObjects';
 
 @Component({
   selector: 'book',

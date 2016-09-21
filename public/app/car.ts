@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Ads, Cars, adsArray} from './app.navMenu';
+import {Ads, Cars} from './adObjects';
 
 @Component({
   selector: 'car',

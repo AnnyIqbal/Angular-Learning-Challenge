@@ -1,15 +1,10 @@
  import { Component, Input } from '@angular/core';
- import {Ads, Books, Cars, Mobiles, adsArray} from './app.navMenu';
+ import {Ads, Books, Cars, Mobiles} from './adObjects';
  import {DisplayBook} from './book';
  import {DisplayCar} from './car';
  import {DisplayMobile} from './mobile'; 
 
-@Component({
-  selector: 'FormInput', 
-  templateUrl: 'app/app.formInput.html'
-})
-export class formInput {
-        ad : any[] = [ // hard coded array for ad listings
+const ad : any[] = [ // hard coded array for ad listings
         {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
         {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")},
         {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg")},
@@ -20,6 +15,14 @@ export class formInput {
         {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")},
         {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
     ]; // objects are pushed dynamically whenever a user posts ad
+
+@Component({
+  selector: 'FormInput', 
+  templateUrl: 'app/app.formInput.html'
+})
+export class formInput {
+    
+    AD = ad;
 
     isNotEmpty(id: string): boolean { // check whether an input field is empty
         let check: HTMLInputElement = document.getElementById(id) as HTMLInputElement;
@@ -109,29 +112,29 @@ export class formInput {
                 let src : string = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
 
                 //creating new Books instance and pushing dynamically in the ad array
-                this.ad.push({x: new Books(title, author, subject, price, src)}); // passing specific url for image upload, img must be at that location
+                ad.push({x: new Books(title, author, subject, price, src)}); // passing specific url for image upload, img must be at that location
     
                 document.getElementById("books").className = "tab-pane fade in active"; // activate books tab
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 
                 // display it in the All & Books tab
                 
-                let showBook : string, lastIndex: number = this.ad.length-1;
+                let showBook : string, lastIndex: number = ad.length-1;
                 showBook = '<div class="panel panel-primary">' +
                             '<div class="panel-heading">' +
                                 '<h3 class="panel-title">' + //title
-                                    this.ad[lastIndex].x.subject +
+                                    ad[lastIndex].x.subject +
                                 '</h3>' +
                             '</div>' +
                             '<div class="panel-body row">'+
                                 '<div class= "col-sm-4">' + // image
-                                    '<img src=' + this.ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
+                                    '<img src=' + ad[lastIndex].x.image + ' alt="book" height="100" width="100" />' +
                                 '</div>' +
                                 '<div class="col-sm-8">' + // details
-                                    this.ad[lastIndex].x.display() +
+                                    ad[lastIndex].x.display() +
                                 '</div>' +
                             '</div>' +
-                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
                         '</div>'; // creating new panel with title and content for book 
                 
                 document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
@@ -154,28 +157,28 @@ export class formInput {
                 let src : string = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
 
                 //creating new Cars instance and pushing dynamically in the ad array
-                this.ad.push({x: new Cars(name, company, model, engine, color, price, src)});
+                ad.push({x: new Cars(name, company, model, engine, color, price, src)});
 
                 document.getElementById("cars").className = "tab-pane fade in active"; // activate cars tab
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
                 
                 // display it in the All & Cars tab
-                let showCar : string, lastIndex: number = this.ad.length-1;
+                let showCar : string, lastIndex: number = ad.length-1;
                 showCar = '<div class="panel panel-primary">' +
                             '<div class="panel-heading">' +
                                 '<h3 class="panel-title">' + //title
-                                    this.ad[lastIndex].x.name +
+                                    ad[lastIndex].x.name +
                                 '</h3>' +
                             '</div>' +
                             '<div class="panel-body row">'+
                                 '<div class= "col-sm-4">' + //image
-                                    '<img src=' + this.ad[lastIndex].x.image + ' alt="car" height="100" width="100" />' +
+                                    '<img src=' + ad[lastIndex].x.image + ' alt="car" height="100" width="100" />' +
                                 '</div>' +
                                 '<div class="col-sm-8">' + // details
-                                    this.ad[lastIndex].x.display() +
+                                    ad[lastIndex].x.display() +
                                 '</div>' +
                             '</div>' +
-                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
                         '</div>'; // creating new panel with title and content for car
                 
                 document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
@@ -197,28 +200,28 @@ export class formInput {
                 let src : string = "C:/Users/Public/Pictures/" + filename; // the img u hv 2 upload should be placed at the specific url
 
                 //creating new Mobiles instance and pushing dynamically in the ad array
-                this.ad.push({x: new Mobiles(model, company, color, screenSize, price, src)});
+                ad.push({x: new Mobiles(model, company, color, screenSize, price, src)});
 
                 document.getElementById("mobiles").className = "tab-pane fade in active"; // activate mobiles tab
                 document.getElementById("form").className = "tab-pane fade"; // deactivate form tab  
 
                 // display it in the All & Mobiles tab
-                let showMobile : string, lastIndex: number = this.ad.length-1;
+                let showMobile : string, lastIndex: number = ad.length-1;
                 showMobile = '<div class="panel panel-primary">' +
                             '<div class="panel-heading">' +
                                 '<h3 class="panel-title">' + //title
-                                    this.ad[lastIndex].x.company + ' ' + this.ad[lastIndex].x.model +
+                                    ad[lastIndex].x.company + ' ' + ad[lastIndex].x.model +
                                 '</h3>' +
                             '</div>' +
                             '<div class="panel-body row">'+
                                 '<div class= "col-sm-4">' + //image
-                                    '<img src=' + this.ad[lastIndex].x.image + ' alt="mobile" height="100" width="100" />' +
+                                    '<img src=' + ad[lastIndex].x.image + ' alt="mobile" height="100" width="100" />' +
                                 '</div>' +
                                 '<div class="col-sm-8">' + // details
-                                    this.ad[lastIndex].x.display() +
+                                    ad[lastIndex].x.display() +
                                 '</div>' +
                             '</div>' +
-                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[lastIndex].x.price + '/-</strong> </div>' +
+                            '<div class="panel-footer text-right"> <strong>Price: Rs. ' + ad[lastIndex].x.price + '/-</strong> </div>' +
                         '</div>'; // creating new panel with title and content for mobile 
                 
                 

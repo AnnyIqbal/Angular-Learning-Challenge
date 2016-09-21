@@ -9,7 +9,7 @@ var core_1 = require('@angular/core');
 var app_navMenu_1 = require('./app.navMenu');
 var DisplayMobile = (function () {
     function DisplayMobile() {
-        this.ad = [
+        this.admb = [
             { x: new app_navMenu_1.Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
             { x: new app_navMenu_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
@@ -17,7 +17,7 @@ var DisplayMobile = (function () {
     DisplayMobile = __decorate([
         core_1.Component({
             selector: 'mobile',
-            template: "<ul>\n  <li  *ngFor=\"let item of ad\">\n  <div class=\"panel panel-primary\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\"> {{item.x.company }} {{item.x.model}} </h3>\n                </div>\n                <div class=\"panel-body row\">\n                    <div class= \"col-sm-4\">\n                        <img src={{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                    </div>\n                    <div class=\"col-sm-8\">\n                        <strong> Model: </strong> {{item.x.model}} <br />\n                        <strong> Company: </strong> {{item.x.company }} <br />\n                        <strong> Color: </strong> {{item.x.color}} <br />\n                        <strong> Screen Size: </strong> {{item.x.screenSize}}\n                    </div>\n                </div>\n                <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n            </div>\n            </li>\n            </ul>",
+            template: "<ul>\n  <li  *ngFor=\"let item of admb\">\n  <div class=\"panel panel-primary\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\"> {{item.x.company }} {{item.x.model}} </h3>\n                </div>\n                <div class=\"panel-body row\">\n                    <div class= \"col-sm-4\">\n                        <img src={{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                    </div>\n                    <div class=\"col-sm-8\">\n                        <strong> Model: </strong> {{item.x.model}} <br />\n                        <strong> Company: </strong> {{item.x.company }} <br />\n                        <strong> Color: </strong> {{item.x.color}} <br />\n                        <strong> Screen Size: </strong> {{item.x.screenSize}}\n                    </div>\n                </div>\n                <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n            </div>\n            </li>\n            </ul>",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         })
     ], DisplayMobile);

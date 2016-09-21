@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Ads, Mobiles, adsArray} from './app.navMenu';
+import {Ads, Mobiles} from './adObjects';
 
 @Component({
   selector: 'mobile',

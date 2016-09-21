@@ -9,7 +9,7 @@ var core_1 = require('@angular/core');
 var app_navMenu_1 = require('./app.navMenu');
 var DisplayBook = (function () {
     function DisplayBook() {
-        this.ad = [
+        this.adbk = [
             { x: new app_navMenu_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
             { x: new app_navMenu_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
@@ -17,7 +17,7 @@ var DisplayBook = (function () {
     DisplayBook = __decorate([
         core_1.Component({
             selector: 'book',
-            template: "<ul>\n                    <li *ngFor=\"let item of ad\">\n                    <div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\"> \n                                    {{item.x.subject}} \n                                </h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src={{item.x.image}} alt=\"book\" height=\"100\" width=\"100\" /> \n                                </div>\n                                <div class=\"col-sm-8\"> \n                                    <strong> Title: </strong> {{item.x.title}} <br />\n                                    <strong> Author: </strong> {{item.x.author}} <br />\n                                    <strong> Subject: </strong> {{item.x.subject}} \n                                </div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}} /-</strong> </div> \n                        </div>\n                        </li>\n               </ul>",
+            template: "<ul>\n                    <li *ngFor=\"let item of adbk\">\n                    <div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\"> \n                                    {{item.x.subject}} \n                                </h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src={{item.x.image}} alt=\"book\" height=\"100\" width=\"100\" /> \n                                </div>\n                                <div class=\"col-sm-8\"> \n                                    <strong> Title: </strong> {{item.x.title}} <br />\n                                    <strong> Author: </strong> {{item.x.author}} <br />\n                                    <strong> Subject: </strong> {{item.x.subject}} \n                                </div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}} /-</strong> </div> \n                        </div>\n                        </li>\n               </ul>",
             // template: `<div class="panel panel-primary">
             //                             <div class="panel-heading">
             //                                 <h3 class="panel-title"> 
