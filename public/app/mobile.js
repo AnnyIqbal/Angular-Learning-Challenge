@@ -6,12 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var app_navMenu_1 = require('./app.navMenu');
+var adObjects_1 = require('./adObjects');
 var DisplayMobile = (function () {
     function DisplayMobile() {
         this.admb = [
-            { x: new app_navMenu_1.Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
-            { x: new app_navMenu_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
+            { x: new adObjects_1.Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg") },
+            { x: new adObjects_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     DisplayMobile = __decorate([

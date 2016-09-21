@@ -6,12 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var app_navMenu_1 = require('./app.navMenu');
+var adObjects_1 = require('./adObjects');
 var DisplayCar = (function () {
     function DisplayCar() {
         this.adcr = [
-            { x: new app_navMenu_1.Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg") },
-            { x: new app_navMenu_1.Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg") }
+            { x: new adObjects_1.Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg") },
+            { x: new adObjects_1.Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg") }
         ];
     }
     DisplayCar = __decorate([

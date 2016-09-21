@@ -1,10 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NgFor} from '@angular/common';
 import {Ads, Books, Cars, Mobiles} from './adObjects';
+import {AdService} from './ad.service';
+
+//import {formInput} from './app.forminput';
 
 @Component({
     selector: 'for',
-    template: '{{displayAd()}}',
+    template: `<div *ngIf="myAd">
+                 {{displayAd()}}
+               </div>`,
     // template: `<ul>
     //                 <li *ngFor="let item of ad"> 
     //                     {{displayAd(item)}} 
@@ -17,43 +22,45 @@ import {Ads, Books, Cars, Mobiles} from './adObjects';
     `]
 })
 export class Loop { 
-    
-    ad : any[] = [ // hard coded array for ad listings
-        {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
-        {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")},
-        {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg")},
-        {x : new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "app/Images/js.png")},
-        {x : new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "app/Images/vitz.jpg")},
-        {x : new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg")},
-        {x : new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg")},
-        {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")},
-        {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
-    ]; // objects are pushed dynamically whenever a user posts ad
+    @Input()
+    myAd;  
+
+    // ad : any[] = [ // hard coded array for ad listings
+    //     {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
+    //     {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")},
+    //     {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg")},
+    //     {x : new Books("A Smarter Way To Learn JavaScript", "Mark Mayers", "JavaScript", 500, "app/Images/js.png")},
+    //     {x : new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "app/Images/vitz.jpg")},
+    //     {x : new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg")},
+    //     {x : new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg")},
+    //     {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")},
+    //     {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
+    // ]; // objects are pushed dynamically whenever a user posts ad
 
 displayAd() {
   // display the All tab
 let a: string;
 
-for (var i = 0; i < this.ad.length; i++) {
-    let classDeterminator : string = this.ad[i].x.cName; // returns class name 
+for (var i = 0; i < this.myAd.length; i++) {
+    let classDeterminator : string = this.myAd[i].x.cName; // returns class name 
 
     switch(classDeterminator) { // use class name to check from which class the object belongs
         case 'Books': {
             a = '<div class="panel panel-primary">' +
                         '<div class="panel-heading">' +
                             '<h3 class="panel-title">' + //title
-                                this.ad[i].x.subject + 
+                                this.myAd[i].x.subject + 
                             '</h3>' +
                         '</div>' +
                         '<div class="panel-body row">'+
                             '<div class= "col-sm-4">' + //image
-                                '<img src=' + this.ad[i].x.image + ' alt="book" height="100" width="100" />' +
+                                '<img src=' + this.myAd[i].x.image + ' alt="book" height="100" width="100" />' +
                             '</div>' +
                             '<div class="col-sm-8">' + // details
-                                this.ad[i].x.display() +
+                                this.myAd[i].x.display() +
                             '</div>' +
                         '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' + //price at footer
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' + //price at footer
                     '</div>'; // creates new panel for book
       
             // setting 4 ads per page
@@ -72,18 +79,18 @@ for (var i = 0; i < this.ad.length; i++) {
             a = '<div class="panel panel-primary">' +
                         '<div class="panel-heading">' +
                             '<h3 class="panel-title">' + //title
-                                this.ad[i].x.name +
+                                this.myAd[i].x.name +
                             '</h3>' +
                         '</div>' +
                         '<div class="panel-body row">'+
                             '<div class= "col-sm-4">' + //image
-                                '<img src=' + this.ad[i].x.image + ' alt="car" height="100" width="100" />' +
+                                '<img src=' + this.myAd[i].x.image + ' alt="car" height="100" width="100" />' +
                             '</div>' +
                             '<div class="col-sm-8">' + // details
-                                this.ad[i].x.display() +
+                                this.myAd[i].x.display() +
                             '</div>' +
                         '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' + //price at footer
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' + //price at footer
                     '</div>'; // creates new panel for car
 
             // setting 4 ads per page
@@ -102,18 +109,18 @@ for (var i = 0; i < this.ad.length; i++) {
              a = '<div class="panel panel-primary">' +
                         '<div class="panel-heading">' +
                             '<h3 class="panel-title">' + //title
-                                this.ad[i].x.company + ' ' + this.ad[i].x.model +
+                                this.myAd[i].x.company + ' ' + this.myAd[i].x.model +
                             '</h3>' +
                         '</div>' +
                         '<div class="panel-body row">'+
                             '<div class= "col-sm-4">' + //image
-                                '<img src=' + this.ad[i].x.image + ' alt="mobile" height="100" width="100" />' +
+                                '<img src=' + this.myAd[i].x.image + ' alt="mobile" height="100" width="100" />' +
                             '</div>' +
                             '<div class="col-sm-8">' + // details
-                                this.ad[i].x.display() +
+                                this.myAd[i].x.display() +
                             '</div>' +
                         '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.ad[i].x.price + '/-</strong> </div>' + //price at footer
+                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' + //price at footer
                     '</div>';  // creates new panel for mobile
             
             // setting 4 ads per page

@@ -6,12 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var app_navMenu_1 = require('./app.navMenu');
+var adObjects_1 = require('./adObjects');
 var DisplayBook = (function () {
     function DisplayBook() {
         this.adbk = [
-            { x: new app_navMenu_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
-            { x: new app_navMenu_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") }
+            { x: new adObjects_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
+            { x: new adObjects_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") }
         ]; // objects are pushed dynamically whenever a user posts ad
     }
     DisplayBook = __decorate([
