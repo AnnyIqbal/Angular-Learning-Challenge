@@ -15,7 +15,7 @@ var OneMobile = (function () {
     OneMobile = __decorate([
         core_1.Component({
             selector: 'oneMobile',
-            template: "<div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{this.myAd.x.company}} {{this.myAd.x.model}} </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src={{this.myAd.x.image}} alt=\"mobile\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> {{this.myAd.x.display()}} </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs.{{this.myAd.x.price}} /-</strong> </div>\n                    </div>"
+            template: "<div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> item.x.company item.x.model </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src=item.x.image alt=\"mobile\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> item.x.display() </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs. item.x.price /-</strong> </div>\n                    </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], OneMobile);

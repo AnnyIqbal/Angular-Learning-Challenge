@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var adObjects_1 = require('./adObjects');
 var Loop = (function () {
     function Loop() {
+        // choice: string;
         this.ad = [
             { x: new adObjects_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
             { x: new adObjects_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") },
@@ -23,26 +24,11 @@ var Loop = (function () {
             { x: new adObjects_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") },
             { x: new adObjects_1.Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg") }
         ];
-        this.choice = this.select();
-        console.log(this.choice);
     }
-    Loop.prototype.select = function () {
-        for (var i = 0; i < this.ad.length; i++) {
-            if (this.ad[i].x.cName == "Books") {
-                return "Books";
-            }
-            else if (this.ad[i].x.cName == "Cars") {
-                return "Cars";
-            }
-            else if (this.ad[i].x.cName == "Mobiles") {
-                return "Mobiles";
-            }
-        }
-    };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "\n    <ul [ngSwitch]=\"choice\">\n                    <li *ngSwitchCase=\"Books\">Book area or tab </li>\n                    <li *ngSwitchCase=\"Cars\">Second choice</li>\n                    <li *ngSwitchCase=\"Mobiles\">Third choice</li>\n                    <li *ngSwitchDefault>Default choice</li>\n                </ul>\n            ",
+            template: "\n    <ul>\n        <li *ngFor=\"let item of ad\">\n            <ul [ngSwitch]=\"item.x.cName\">\n               <li *ngSwitchCase=\"Books\"><oneBook></oneBook></li>\n               <li *ngSwitchCase=\"Cars\"><oneCar></oneCar></li>\n               <li *ngSwitchCase=\"Mobiles\"><oneMobile></oneMobile></li>\n               <li *ngSwitchDefault>Default choice</li>\n            </ul>\n       </li>\n    </ul>\n            ",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])

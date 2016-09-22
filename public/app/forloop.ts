@@ -1,16 +1,20 @@
 import {Component} from '@angular/core';
-import {NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
+import {NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 import {Books, Cars, Mobiles} from './adObjects';
 
 @Component({
     selector: 'for',
     template: `
-    <ul [ngSwitch]="choice">
-                    <li *ngSwitchCase="Books">Book area or tab </li>
-                    <li *ngSwitchCase="Cars">Second choice</li>
-                    <li *ngSwitchCase="Mobiles">Third choice</li>
-                    <li *ngSwitchDefault>Default choice</li>
-                </ul>
+    <ul>
+        <li *ngFor="let item of ad">
+            <ul [ngSwitch]="item.x.cName">
+               <li *ngSwitchCase="Books"><oneBook></oneBook></li>
+               <li *ngSwitchCase="Cars"><oneCar></oneCar></li>
+               <li *ngSwitchCase="Mobiles"><oneMobile></oneMobile></li>
+               <li *ngSwitchDefault>Default choice</li>
+            </ul>
+       </li>
+    </ul>
             `,
     styles: [`
     li {
@@ -19,7 +23,7 @@ import {Books, Cars, Mobiles} from './adObjects';
     `]
 })
 export class Loop { 
-    choice: string;
+    // choice: string;
     ad : any[] = [ // hard coded array for ad listings
         {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
         {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")},
@@ -32,21 +36,21 @@ export class Loop {
         {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
     ]; 
 
-    select() : string{
-        for(let i=0; i<this.ad.length; i++){
-            if(this.ad[i].x.cName == "Books") {
-                return "Books";
-            }
-            else if(this.ad[i].x.cName == "Cars") {
-                return "Cars";
-            }
-            else if(this.ad[i].x.cName == "Mobiles") {
-                return "Mobiles";
-            }
-        }
-    } 
-    constructor(){
-        this.choice = this.select();
-        console.log(this.choice);
-    }
+    // select() : string{
+    //     for(let i=0; i<this.ad.length; i++){
+    //         if(this.ad[i].x.cName == "Books") {
+    //             return "Books";
+    //         }
+    //         else if(this.ad[i].x.cName == "Cars") {
+    //             return "Cars";
+    //         }
+    //         else if(this.ad[i].x.cName == "Mobiles") {
+    //             return "Mobiles";
+    //         }
+    //     }
+    // } 
+    // constructor(){
+    //     this.choice = this.select();
+    //     console.log(this.choice);
+    // }
 }
