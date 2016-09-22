@@ -33,20 +33,20 @@ export class Loop {
     ]; 
 
     select() : string{
-    for(let i=0; i<this.ad.length; i++){
-    if(this.ad[i].x.cName == "Books") {
-        return "Books";
-    }
-    else if(this.ad[i].x.cName == "Cars") {
-        return "Cars";
-    }
-    else if(this.ad[i].x.cName == "Mobiles") {
-        return "Mobiles";
-    }
-    alert(this.choice);// net chale to chk it
-    }
-} 
+        for(let i=0; i<this.ad.length; i++){
+            if(this.ad[i].x.cName == "Books") {
+                return "Books";
+            }
+            else if(this.ad[i].x.cName == "Cars") {
+                return "Cars";
+            }
+            else if(this.ad[i].x.cName == "Mobiles") {
+                return "Mobiles";
+            }
+        }
+    } 
     constructor(){
         this.choice = this.select();
+        console.log(this.choice);
     }
 }

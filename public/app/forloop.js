@@ -24,6 +24,7 @@ var Loop = (function () {
             { x: new adObjects_1.Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg") }
         ];
         this.choice = this.select();
+        console.log(this.choice);
     }
     Loop.prototype.select = function () {
         for (var i = 0; i < this.ad.length; i++) {
@@ -36,7 +37,6 @@ var Loop = (function () {
             else if (this.ad[i].x.cName == "Mobiles") {
                 return "Mobiles";
             }
-            alert(this.choice); // net chale to chk it
         }
     };
     Loop = __decorate([
