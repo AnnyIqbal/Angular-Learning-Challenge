@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'searchBox', 
-  template: `<span> Search By Ad Title
+  template: `<span>
     <label for="input" class="sr-only"> Search by ad title </label>
     <input type="search" [placeholder]="'Search'" #input (keydown.enter) = "onSearch(input.value)" />
     <button class="clear-btn" (click)="clear(input)">Clear </button>

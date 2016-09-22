@@ -8,13 +8,66 @@ import {Books, Cars, Mobiles} from './adObjects';
     <ul>
         <li *ngFor="let item of ad">
             <ul [ngSwitch]="item.x.cName">
-               <li *ngSwitchCase="'Books'"><oneBook></oneBook></li>
-               <li *ngSwitchCase="'Cars'"><oneCar></oneCar></li>
-               <li *ngSwitchCase="'Mobiles'"><oneMobile></oneMobile></li>
-               <li *ngSwitchDefault>Default choice</li>
-            </ul>
-       </li>
+               <li *ngSwitchCase="'Books'">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"> {{item.x.subject}} </h3>
+                        </div>
+                        <div class="panel-body row">
+                            <div class= "col-sm-4">
+                                <img src={{item.x.image}} alt="book" height="100" width="100" />
+                            </div>
+                            <div class="col-sm-8"> 
+                                <strong> Title: </strong> {{item.x.title}} <br />
+                                <strong> Author: </strong> {{item.x.author}} <br />
+                                <strong> Subject: </strong> {{item.x.subject}} 
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right"> <strong>Price: Rs. {{item.x.price}} /-</strong> </div>
+                    </div>
+                </li>
+               <li *ngSwitchCase="'Cars'">
+                   <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"> {{item.x.name}} </h3>
+                        </div>
+                    <div class="panel-body row">
+                        <div class= "col-sm-4">
+                            <img src= {{item.x.image}} alt="car" height="100" width="100" />
+                        </div>
+                        <div class="col-sm-8">
+                        <strong> Company: </strong> {{item.x.company}} <br />
+                        <strong> Model: </strong> {{item.x.model}} <br />
+                        <strong> Engine: </strong> {{item.x.engine}} cc <br />
+                        <strong> Color: </strong>{{item.x.color}} 
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>
+                </div>
+        </li>
+        <li *ngSwitchCase="'Mobiles'">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> {{item.x.company }} {{item.x.model}} </h3>
+                </div>
+                <div class="panel-body row">
+                    <div class= "col-sm-4">
+                        <img src={{item.x.image}} alt="car" height="100" width="100" />
+                    </div>
+                    <div class="col-sm-8">
+                        <strong> Model: </strong> {{item.x.model}} <br />
+                        <strong> Company: </strong> {{item.x.company }} <br />
+                        <strong> Color: </strong> {{item.x.color}} <br />
+                        <strong> Screen Size: </strong> {{item.x.screenSize}}
+                    </div>
+                </div>
+                <div class="panel-footer text-right"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>
+            </div>
+        </li>
+        <li *ngSwitchDefault>Default choice</li>
     </ul>
+  </li>
+</ul>
             `,
     styles: [`
     li {
