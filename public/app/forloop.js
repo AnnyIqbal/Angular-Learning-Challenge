@@ -28,7 +28,7 @@ var Loop = (function () {
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "\n    <ul>\n        <li *ngFor=\"let item of ad\">\n            <ul [ngSwitch]=\"item.x.cName\">\n               <li *ngSwitchCase=\"Books\"><oneBook></oneBook></li>\n               <li *ngSwitchCase=\"Cars\"><oneCar></oneCar></li>\n               <li *ngSwitchCase=\"Mobiles\"><oneMobile></oneMobile></li>\n               <li *ngSwitchDefault>Default choice</li>\n            </ul>\n       </li>\n    </ul>\n            ",
+            template: "\n    <ul>\n        <li *ngFor=\"let item of ad\">\n            <ul [ngSwitch]=\"item.x.cName\">\n               <li *ngSwitchCase=\"'Books'\"><oneBook></oneBook></li>\n               <li *ngSwitchCase=\"'Cars'\"><oneCar></oneCar></li>\n               <li *ngSwitchCase=\"'Mobiles'\"><oneMobile></oneMobile></li>\n               <li *ngSwitchDefault>Default choice</li>\n            </ul>\n       </li>\n    </ul>\n            ",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])

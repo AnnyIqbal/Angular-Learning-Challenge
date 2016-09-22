@@ -21,9 +21,9 @@ var car_1 = require('./car');
 var app_forminput_1 = require('./app.forminput');
 var forloop_1 = require('./forloop');
 //import {SignIn} from './signin'; thori der k lie band kia hai kholna na bhoolna
-// import {OneBook} from './oneBook';
-// import {OneCar} from './oneCar';
-// import {OneMobile} from './oneMobile';
+var oneBook_1 = require('./oneBook');
+var oneCar_1 = require('./oneCar');
+var oneMobile_1 = require('./oneMobile');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,10 +31,10 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, oneBook_1.OneBook, oneCar_1.OneCar, oneMobile_1.OneMobile
             ],
             bootstrap: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, oneBook_1.OneBook, oneCar_1.OneCar, oneMobile_1.OneMobile
             ] //, OneBook, OneCar, OneMobile, SignIn
         }), 
         __metadata('design:paramtypes', [])

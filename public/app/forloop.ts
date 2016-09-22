@@ -8,9 +8,9 @@ import {Books, Cars, Mobiles} from './adObjects';
     <ul>
         <li *ngFor="let item of ad">
             <ul [ngSwitch]="item.x.cName">
-               <li *ngSwitchCase="Books"><oneBook></oneBook></li>
-               <li *ngSwitchCase="Cars"><oneCar></oneCar></li>
-               <li *ngSwitchCase="Mobiles"><oneMobile></oneMobile></li>
+               <li *ngSwitchCase="'Books'"><oneBook></oneBook></li>
+               <li *ngSwitchCase="'Cars'"><oneCar></oneCar></li>
+               <li *ngSwitchCase="'Mobiles'"><oneMobile></oneMobile></li>
                <li *ngSwitchDefault>Default choice</li>
             </ul>
        </li>
