@@ -3,8 +3,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'searchBox', 
   template: `<span> Search By Ad Title
-    <label for="search" class="sr-only"> Search by ad title </label>
-    <input type="text" [placeholder]="'Search'" id= "search" #input (keydown.enter) = "onSearch(input.value)" />
+    <label for="input" class="sr-only"> Search by ad title </label>
+    <input type="search" [placeholder]="'Search'" #input (keydown.enter) = "onSearch(input.value)" />
     <button class="clear-btn" (click)="clear(input)">Clear </button>
     </span>`,
   styles: [`

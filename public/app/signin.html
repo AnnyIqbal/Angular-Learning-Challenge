@@ -1,19 +1,18 @@
 <!-- Sign In Input Fields-->
-<span id="signin">
-    <form action="index.html" method="post">
+    <form action="../index.html" method="post" (submit)="matchFound(username.value, password.value)";>
         <label for="username" class="sr-only"> Username </label>
-        <input type="text" id="username" placeholder="Username" /><!--onfocus-->
+        <input type="text" id="username" placeholder="Username" #username /><!--onfocus-->
         <label for="passcode" class="sr-only"> Password </label>
-        <input type="text" id="passcode" placeholder="Password" /> 
-        <a href="index.html">
-            <button type="button" class="btn btn-primary"> SignIn </button>
+        <input type="number" id="passcode" placeholder="Passcode" #password /> 
+        <a href="../index.html">
+            <input type="submit" class="btn btn-primary" value="SignIn" />
+            <!--<button type="button" class="btn btn-primary" (click)="match(username.value, password.value)"> SignIn </button>-->
         </a>
     </form>
-</span>
 
 <!--Sign Up Link Button-->
 <p> Don't Have a Classified Account? 
-    <a href="app/signup.html">
+    <a href="signup.html">
         <button type="button" class="btn btn-primary" data-toggle=""> SignUp </button>
     </a>
 </p>
@@ -29,17 +28,19 @@
         </div> 
 
 <!-- footer area -->
-<div id="footer" class="row">
-    <div class="col-sm-3">
-        <a href="https://annyportfolio.firebaseapp.com/" onmouseover="Qurat ul Ann Iqbal" target="_blank"> About Developer </a> 
-    </div> |
-    <div class="col-sm-3">
-        <a href="Javascript:void(0)"> Terms & Conditions </a> 
-    </div> |
-    <div class="col-sm-3">
-        <a href="Javascript:void(0)"> Privacy Policy </a> 
-    </div> |
-    <div class="col-sm-3">
+<div id="footer" class="container-fluid">
+<div class="row">
+    <div class="col-sm-2">
+        <a href="https://annyportfolio.firebaseapp.com/" data-toggle="Qurat ul Ann Iqbal" target="_blank"> About Developer </a> |
+    </div>
+    <div class="col-sm-2">
+        <a href="Javascript:void(0)"> Terms & Conditions </a> |
+    </div>
+    <div class="col-sm-2">
+        <a href="Javascript:void(0)"> Privacy Policy </a> |
+    </div>
+    <div class="col-sm-2">
         <a href="Javascript:void(0)"> All Rights Reserved, © 2016 </a>
     </div>
+</div>
 </div>

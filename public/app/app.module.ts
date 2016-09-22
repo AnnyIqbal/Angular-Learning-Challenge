@@ -8,11 +8,10 @@ import { NavMenu } from './app.navMenu';
 import { DisplayBook } from './book';
 import { DisplayMobile } from './mobile';
 import {DisplayCar} from './car';
-import {Pagination} from './app.pagination';
 import {formInput} from './app.forminput';
 import {Loop} from './forloop';
 import {AdService} from './ad.service';
-import {SignIn} from './signin';
+//import {SignIn} from './signin'; thori der k lie band kia hai kholna na bhoolna
 // import {OneBook} from './oneBook';
 // import {OneCar} from './oneCar';
 // import {OneMobile} from './oneMobile';
@@ -20,10 +19,10 @@ import {SignIn} from './signin';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop, SignIn 
-  ], //, OneBook, OneCar, OneMobile
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop 
+  ], //, OneBook, OneCar, OneMobile, SignIn
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop, SignIn 
-  ] //, OneBook, OneCar, OneMobile
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop 
+  ] //, OneBook, OneCar, OneMobile, SignIn
 })
 export class AppModule { }

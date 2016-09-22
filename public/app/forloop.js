@@ -36,12 +36,13 @@ var Loop = (function () {
             else if (this.ad[i].x.cName == "Mobiles") {
                 return "Mobiles";
             }
+            alert(this.choice); // net chale to chk it
         }
     };
     Loop = __decorate([
         core_1.Component({
             selector: 'for',
-            template: "\n    <ul [ngSwitch]=\"choice\">\n                    <template *ngSwitchCase=\"Books\">Book area or tab </template>\n                    <template *ngSwitchCase=\"Cars\">Second choice</template>\n                    <template *ngSwitchCase=\"Mobiles\">Third choice</template>\n                    <template *ngSwitchDefault>Default choice</template>\n                </ul>\n            ",
+            template: "\n    <ul [ngSwitch]=\"choice\">\n                    <li *ngSwitchCase=\"Books\">Book area or tab </li>\n                    <li *ngSwitchCase=\"Cars\">Second choice</li>\n                    <li *ngSwitchCase=\"Mobiles\">Third choice</li>\n                    <li *ngSwitchDefault>Default choice</li>\n                </ul>\n            ",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])

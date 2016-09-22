@@ -11,7 +11,24 @@ import {Component} from '@angular/core';
             font-size: larger;
             color: white !important;
         }
-    
+        #footer div {
+            display: inline;
+        }
     `]
 })
-export class SignIn{}
+export class SignIn{
+    users: {uname: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
+   
+    matchFound(user,code): boolean {
+        for(let i=0; i<this.users.length; i++) {
+            if((this.users[i].uname === user.toLowercase()) && (this.users[i].pcode === code)) {
+                return true;
+            }
+            else {
+                alert("Incorrect Username or Password!");
+                return false;
+            }
+        }
+    }
+
+}

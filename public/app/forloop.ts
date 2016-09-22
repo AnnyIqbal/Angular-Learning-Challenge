@@ -6,10 +6,10 @@ import {Books, Cars, Mobiles} from './adObjects';
     selector: 'for',
     template: `
     <ul [ngSwitch]="choice">
-                    <template *ngSwitchCase="Books">Book area or tab </template>
-                    <template *ngSwitchCase="Cars">Second choice</template>
-                    <template *ngSwitchCase="Mobiles">Third choice</template>
-                    <template *ngSwitchDefault>Default choice</template>
+                    <li *ngSwitchCase="Books">Book area or tab </li>
+                    <li *ngSwitchCase="Cars">Second choice</li>
+                    <li *ngSwitchCase="Mobiles">Third choice</li>
+                    <li *ngSwitchDefault>Default choice</li>
                 </ul>
             `,
     styles: [`
@@ -43,6 +43,7 @@ export class Loop {
     else if(this.ad[i].x.cName == "Mobiles") {
         return "Mobiles";
     }
+    alert(this.choice);// net chale to chk it
     }
 } 
     constructor(){
