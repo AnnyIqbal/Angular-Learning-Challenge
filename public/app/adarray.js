@@ -11,3 +11,4 @@ exports.ad = [
     { x: new adObjects_1.Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png") },
     { x: new adObjects_1.Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg") }
 ]; // objects are pushed dynamically whenever a user posts ad
+//# sourceMappingURL=adArray.js.map
