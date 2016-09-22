@@ -1,17 +1,20 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'searchBox', 
-  template: `<span>
-    <label for="input" class="sr-only"> Search by ad title </label>
-    <input type="search" [placeholder]="'Search'" #input (keydown.enter) = "onSearch(input.value)" />
-    <button class="clear-btn" (click)="clear(input)">Clear </button>
-    </span>`,
+  template: `
+    <span>
+      <label for="input" class="sr-only"> Search by ad title </label>
+      <input type="search" [placeholder]="'Search'" #input (keydown.enter) = "search(input.value)" />
+      <button class="search-btn" (click)="search(input.value)"> Search </button>
+    </span>
+    <br /><br />
+    `,
   styles: [`
   span {
-    font-weight: bold;
+    font-family: Comic-sans, serif;
   }
-  .clear-btn {
+  .search-btn {
     background-color: rgb(72, 95, 249);
     color: white;
   }
@@ -19,21 +22,36 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     width: 50%;
   }
   `]
-  // templateURL: 'app.searchBox.html',
-  // styleURLs: ['app.searchBox.css']
 })
 export class SearchBox { 
 
   @Input('placeholder')
-  text : string = "Search";
+  text : string = "Search Here";
 
-  @Output() search = new EventEmitter();
+  search(input) {
+    if(input.value === "b" ||"bo" || "boo" || "book" || "books") {
+      document.getElementById("p1").className = "tab-pane fade";
+      document.getElementById("books").className ="tab-pane fade in active";
+      document.getElementById("aTab").className = ''; //removing active class
+      document.getElementById("bTab").className = 'active'; //activating the books tab
 
-  clear(input) {
-    input.value = '';
-  }
+      document.getElementById("p1").innerHTML = '<book></book>'; //display books array
+    }
+    else if(input.value === "c" ||"ca" || "car" || "cars") {
+      document.getElementById("p1").className = "tab-pane fade";
+      document.getElementById("cars").className ="tab-pane fade in active";
+      document.getElementById("aTab").className = ''; //removing active class
+      document.getElementById("cTab").className = 'active'; //activating the cars tab
 
-  onSearch(searchText) {
-    this.search.emit(searchText);
+      document.getElementById("p1").innerHTML = '<car></car>'; //display cars array
+    }
+    else if(input.value === "m" ||"mo" || "mob" || "mobi" || "mobil" || "mobile" || "mobiles") {
+      document.getElementById("p1").className = "tab-pane fade";
+      document.getElementById("mobiles").className ="tab-pane fade in active";
+      document.getElementById("aTab").className = ''; //removing active class
+      document.getElementById("mTab").className = 'active'; //activating the mobiles tab
+
+      document.getElementById("p1").innerHTML = '<mobile></mobile>'; //display mobiles array
+    }
   }
 }

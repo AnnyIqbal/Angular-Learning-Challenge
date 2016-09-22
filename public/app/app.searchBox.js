@@ -11,28 +11,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var SearchBox = (function () {
     function SearchBox() {
-        this.text = "Search";
-        this.search = new core_1.EventEmitter();
+        this.text = "Search Here";
     }
-    SearchBox.prototype.clear = function (input) {
-        input.value = '';
-    };
-    SearchBox.prototype.onSearch = function (searchText) {
-        this.search.emit(searchText);
+    SearchBox.prototype.search = function (input) {
+        if (input.value === "b" || "bo" || "boo" || "book" || "books") {
+            document.getElementById("p1").className = "tab-pane fade";
+            document.getElementById("books").className = "tab-pane fade in active";
+            document.getElementById("aTab").className = ''; //removing active class
+            document.getElementById("bTab").className = 'active'; //activating the books tab
+            document.getElementById("p1").innerHTML = '<book></book>'; //display books array
+        }
+        else if (input.value === "c" || "ca" || "car" || "cars") {
+            document.getElementById("p1").className = "tab-pane fade";
+            document.getElementById("cars").className = "tab-pane fade in active";
+            document.getElementById("aTab").className = ''; //removing active class
+            document.getElementById("cTab").className = 'active'; //activating the cars tab
+            document.getElementById("p1").innerHTML = '<car></car>'; //display cars array
+        }
+        else if (input.value === "m" || "mo" || "mob" || "mobi" || "mobil" || "mobile" || "mobiles") {
+            document.getElementById("p1").className = "tab-pane fade";
+            document.getElementById("mobiles").className = "tab-pane fade in active";
+            document.getElementById("aTab").className = ''; //removing active class
+            document.getElementById("mTab").className = 'active'; //activating the mobiles tab
+            document.getElementById("p1").innerHTML = '<mobile></mobile>'; //display mobiles array
+        }
     };
     __decorate([
         core_1.Input('placeholder'), 
         __metadata('design:type', String)
     ], SearchBox.prototype, "text", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], SearchBox.prototype, "search", void 0);
     SearchBox = __decorate([
         core_1.Component({
             selector: 'searchBox',
-            template: "<span>\n    <label for=\"input\" class=\"sr-only\"> Search by ad title </label>\n    <input type=\"search\" [placeholder]=\"'Search'\" #input (keydown.enter) = \"onSearch(input.value)\" />\n    <button class=\"clear-btn\" (click)=\"clear(input)\">Clear </button>\n    </span>",
-            styles: ["\n  span {\n    font-weight: bold;\n  }\n  .clear-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n  }\n  input {\n    width: 50%;\n  }\n  "]
+            template: "\n    <span>\n      <label for=\"input\" class=\"sr-only\"> Search by ad title </label>\n      <input type=\"search\" [placeholder]=\"'Search'\" #input (keydown.enter) = \"search(input.value)\" />\n      <button class=\"search-btn\" (click)=\"search(input.value)\"> Search </button>\n    </span>\n    <br /><br />\n    ",
+            styles: ["\n  span {\n    font-family: Comic-sans, serif;\n  }\n  .search-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n  }\n  input {\n    width: 50%;\n  }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], SearchBox);
