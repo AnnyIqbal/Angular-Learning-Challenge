@@ -7,7 +7,7 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     vertical-align: baseline;
-    font-family: "Old English Text", Georgia, 'Times New Roman', Times, serif;
+    font-family: "Old English Text", Georgia, 'Times New Roman', Times, serif !important;
     /*background-color: rgba(128,128,128,0.25);*/
 }
 figure img {

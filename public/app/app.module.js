@@ -21,6 +21,7 @@ var car_1 = require('./car');
 var app_pagination_1 = require('./app.pagination');
 var app_forminput_1 = require('./app.forminput');
 var forloop_1 = require('./forloop');
+var signin_1 = require('./signin');
 // import {OneBook} from './oneBook';
 // import {OneCar} from './oneCar';
 // import {OneMobile} from './oneMobile';
@@ -31,10 +32,10 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_forminput_1.formInput, forloop_1.Loop
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_forminput_1.formInput, forloop_1.Loop, signin_1.SignIn
             ],
             bootstrap: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_forminput_1.formInput, forloop_1.Loop
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_pagination_1.Pagination, app_forminput_1.formInput, forloop_1.Loop, signin_1.SignIn
             ] //, OneBook, OneCar, OneMobile
         }), 
         __metadata('design:paramtypes', [])
