@@ -9,14 +9,18 @@ import { DisplayBook } from './book';
 import { DisplayMobile } from './mobile';
 import {DisplayCar} from './car';
 import {Pagination} from './app.pagination';
-import {formInput} from './app.formInput';
+import {formInput} from './app.forminput';
 import {Loop} from './forloop';
+import {AdService} from './ad.service';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop ], 
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop 
+  ], 
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop ]
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop 
+  ]
 })
 export class AppModule { }

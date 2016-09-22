@@ -15,7 +15,7 @@ figure img {
     width: 100px;
 }
 .jumbotron {
-    background-image: url("app/Images/bg10.png"); /* 6 8 12 wow*/
+    background-image: url("app/Images/bg10.png"); 
     background-size: 100% 100%; /* Image will stretch to cover entire content area */
     background-repeat: no-repeat;
     font-size: larger;

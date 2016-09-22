@@ -33,6 +33,7 @@ import {Ads, Cars} from './adObjects';
 export class DisplayCar{
     adcr = [ // hard coded array for ad listings
         {x : new Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg")},
+        {x : new Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "app/Images/vitz.jpg")},
         {x : new Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg")}
     ];
 }

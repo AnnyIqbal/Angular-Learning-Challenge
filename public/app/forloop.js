@@ -28,90 +28,45 @@ var Loop = (function () {
             var classDeterminator = this.myAd[i].x.cName; // returns class name 
             switch (classDeterminator) {
                 case 'Books': {
-                    a = '<div class="panel panel-primary">' +
-                        '<div class="panel-heading">' +
-                        '<h3 class="panel-title">' +
-                        this.myAd[i].x.subject +
-                        '</h3>' +
-                        '</div>' +
-                        '<div class="panel-body row">' +
-                        '<div class= "col-sm-4">' +
-                        '<img src=' + this.myAd[i].x.image + ' alt="book" height="100" width="100" />' +
-                        '</div>' +
-                        '<div class="col-sm-8">' +
-                        this.myAd[i].x.display() +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' +
-                        '</div>'; // creates new panel for book
+                    a = "<div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{this.myAd.x.subject}} </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src={{this.myAd.x.image}} alt=\"book\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> {{this.myAd.x.display()}} </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{this.myAd.x.price}} /-</strong> </div>\n                    </div>"; // creates new panel for book
                     // setting 4 ads per page
-                    if (i <= 3) {
-                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
-                    }
-                    else if (i >= 4 && i <= 7) {
-                        document.getElementById("p2").innerHTML += a;
-                    }
-                    else if (i >= 8) {
-                        document.getElementById("p3").innerHTML += a;
-                    }
+                    // if(i<=3) {
+                    document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    // }
+                    // else if(i>=4 && i<=7) {
+                    //     document.getElementById("p2").innerHTML += a;
+                    // }
+                    // else if(i>=8) {
+                    //     document.getElementById("p3").innerHTML += a;
+                    // }
                     break;
                 }
                 case 'Cars': {
-                    a = '<div class="panel panel-primary">' +
-                        '<div class="panel-heading">' +
-                        '<h3 class="panel-title">' +
-                        this.myAd[i].x.name +
-                        '</h3>' +
-                        '</div>' +
-                        '<div class="panel-body row">' +
-                        '<div class= "col-sm-4">' +
-                        '<img src=' + this.myAd[i].x.image + ' alt="car" height="100" width="100" />' +
-                        '</div>' +
-                        '<div class="col-sm-8">' +
-                        this.myAd[i].x.display() +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' +
-                        '</div>'; // creates new panel for car
+                    a = "<div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{this.myAd.x.name}} </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src={{this.myAd.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> {{this.myAd.x.display()}} </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{this.myAd.x.price}}/-</strong> </div>\n                    </div>"; // creates new panel for car
                     // setting 4 ads per page
-                    if (i <= 3) {
-                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
-                    }
-                    else if (i >= 4 && i <= 7) {
-                        document.getElementById("p2").innerHTML += a;
-                    }
-                    else if (i >= 8) {
-                        document.getElementById("p3").innerHTML += a;
-                    }
+                    // if(i<=3) {
+                    document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    // }
+                    // else if(i>=4 && i<=7) {
+                    //     document.getElementById("p2").innerHTML += a;
+                    // }
+                    // else if(i>=8) {
+                    //     document.getElementById("p3").innerHTML += a;
+                    // }
                     break;
                 }
                 case 'Mobiles': {
-                    a = '<div class="panel panel-primary">' +
-                        '<div class="panel-heading">' +
-                        '<h3 class="panel-title">' +
-                        this.myAd[i].x.company + ' ' + this.myAd[i].x.model +
-                        '</h3>' +
-                        '</div>' +
-                        '<div class="panel-body row">' +
-                        '<div class= "col-sm-4">' +
-                        '<img src=' + this.myAd[i].x.image + ' alt="mobile" height="100" width="100" />' +
-                        '</div>' +
-                        '<div class="col-sm-8">' +
-                        this.myAd[i].x.display() +
-                        '</div>' +
-                        '</div>' +
-                        '<div class="panel-footer text-right"> <strong>Price: Rs. ' + this.myAd[i].x.price + '/-</strong> </div>' +
-                        '</div>'; // creates new panel for mobile
+                    a = "<div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{this.myAd.x.company}} {{this.myAd.x.model}} </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src={{this.myAd.x.image}} alt=\"mobile\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> {{this.myAd.x.display()}} </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs.{{this.myAd.x.price}} /-</strong> </div>\n                    </div>"; // creates new panel for mobile
                     // setting 4 ads per page
-                    if (i <= 3) {
-                        document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
-                    }
-                    else if (i >= 4 && i <= 7) {
-                        document.getElementById("p2").innerHTML += a;
-                    }
-                    else if (i >= 8) {
-                        document.getElementById("p3").innerHTML += a;
-                    }
+                    // if(i<=3) {
+                    document.getElementById("p1").innerHTML += a; // error araha hai cant read innerHTML of null :/
+                    // }
+                    // else if(i>=4 && i<=7) {
+                    //     document.getElementById("p2").innerHTML += a;
+                    // }
+                    // else if(i>=8) {
+                    //     document.getElementById("p3").innerHTML += a;
+                    // }
                     break;
                 }
                 default: {

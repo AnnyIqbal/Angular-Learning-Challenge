@@ -11,6 +11,7 @@ var DisplayCar = (function () {
     function DisplayCar() {
         this.adcr = [
             { x: new adObjects_1.Cars("Corolla", "Toyota", 2016, 1500, "white", 540000, "app/Images/corolla.jpg") },
+            { x: new adObjects_1.Cars("Vitz", "Toyota", 2017, 1200, "black", 500000, "app/Images/vitz.jpg") },
             { x: new adObjects_1.Cars("CheryQQ", "Santro", 2016, 1000, "red", 205000, "app/Images/cheryqq.jpg") }
         ];
     }

@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 import {Ads, Mobiles} from './adObjects';
+import { ad } from './adArray'; //ad array imported
+
+// let admb : Mobiles[];
+// for(let i=0; i<ad.length; i++) {
+//     if(ad[i].x.cName === 'Mobiles') {
+//         admb[i] = ad[i];
+//     }
+// }
 
 @Component({
   selector: 'mobile',
   template: `<ul>
-  <li  *ngFor="let item of admb">
+  <li *ngFor="let item of admb">
   <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"> {{item.x.company }} {{item.x.model}} </h3>
@@ -31,8 +39,9 @@ import {Ads, Mobiles} from './adObjects';
     `]
 })
 export class DisplayMobile {
-    admb = [ // hard coded array for ad listings
+    admb = [ 
         {x : new Mobiles("J1-Ace", "Samsung", "white", 4.3, 19000, "app/Images/j1.jpg")},
-        {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")}
-    ]; // objects are pushed dynamically whenever a user posts ad
+        {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")},
+        {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
+    ]; 
 } 

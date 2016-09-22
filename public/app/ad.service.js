@@ -11,7 +11,7 @@ var AdService = (function () {
     function AdService() {
     }
     AdService.prototype.getAds = function () {
-        return adArray_1.ad;
+        return Promise.resolve(adArray_1.ad);
     };
     AdService = __decorate([
         //ad array imported
