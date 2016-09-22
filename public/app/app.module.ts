@@ -12,15 +12,17 @@ import {Pagination} from './app.pagination';
 import {formInput} from './app.forminput';
 import {Loop} from './forloop';
 import {AdService} from './ad.service';
-
+import {OneBook} from './oneBook';
+import {OneCar} from './oneCar';
+import {OneMobile} from './oneMobile';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop 
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop, OneBook, OneCar, OneMobile 
   ], 
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop 
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, Pagination, formInput, Loop, OneBook,  OneCar, OneMobile 
   ]
 })
 export class AppModule { }
