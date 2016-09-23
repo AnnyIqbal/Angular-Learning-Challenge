@@ -21,6 +21,11 @@
                        <img src="app/Images/m1.png" alt="mobiles" class="img-responsive center-block" />
                     </a>
                 </li>
+                <li role="presentation" id="sTab">
+                    <a href="#search" aria-controls="search" role="tab" data-toggle="tab">
+                       <img src="app/Images/s.png" alt="search" class="img-responsive center-block" />
+                    </a>
+                </li>
                 <li id="button" role="presentation">
                     <a href="#form" type="button" aria-controls="form" role="tab" data-toggle="tab" (click)="fieldsEmptied();">
                         <img [src]="postAd" alt="Post Ad" /> 
@@ -47,6 +52,10 @@
                 <div role="tabpanel" class="tab-pane fade" id="mobiles">
                     <h1> Mobiles </h1>
                     <mobile></mobile>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="search">
+                    <h1> Search Results </h1>
+                    <searchBox></searchBox>
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="form">
                     <h1> POST AN AD </h1>

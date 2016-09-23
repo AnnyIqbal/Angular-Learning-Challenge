@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import {NgFor} from '@angular/common';
 
+import { ad } from './adArray'; //ad array imported
+import {Ads, Books, Cars, Mobiles} from './adObjects';
+import { DisplayBook } from './book';
+import { DisplayMobile } from './mobile';
+import {DisplayCar} from './car';
+import {SearchBox} from './app.searchBox';
+
 @Component({
   selector: 'navMenu', 
   templateUrl: 'app/app.navMenu.html'

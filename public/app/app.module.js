@@ -20,9 +20,6 @@ var mobile_1 = require('./mobile');
 var car_1 = require('./car');
 var app_forminput_1 = require('./app.forminput');
 var forloop_1 = require('./forloop');
-// import {OneBook} from './oneBook';
-// import {OneCar} from './oneCar';
-// import {OneMobile} from './oneMobile';
 var footer_1 = require('./footer');
 //import {SignIn} from './signin'; thori der k lie band kia hai kholna na bhoolna
 var AppModule = (function () {

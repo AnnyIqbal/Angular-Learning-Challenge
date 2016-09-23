@@ -4,6 +4,9 @@ import {Ads, Books, Cars, Mobiles} from './adObjects';
 import { DisplayBook } from './book';
 import { DisplayMobile } from './mobile';
 import {DisplayCar} from './car';
+import {OneBook} from './oneBook';
+import {OneCar} from './oneCar';
+import {OneMobile} from './oneMobile';
 
 @Component({
   selector: 'searchBox', 

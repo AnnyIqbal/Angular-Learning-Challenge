@@ -15,7 +15,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<searchBox  text=\"Type Your Search Here\"></searchBox>"
+            template: //`<signin></signin>`
+            "<searchBox  text=\"Type Your Search Here\"></searchBox>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
