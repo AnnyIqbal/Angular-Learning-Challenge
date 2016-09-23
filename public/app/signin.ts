@@ -19,6 +19,10 @@ import {Component} from '@angular/core';
 export class SignIn{
     users: {uname: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
    
+    register(name, code) {
+        this.users.push(name, code);
+    }
+
     matchFound(user,code): boolean {
         for(let i=0; i<this.users.length; i++) {
             if((this.users[i].uname === user.toLowercase()) && (this.users[i].pcode === code)) {

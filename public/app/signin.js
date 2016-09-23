@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var SignIn = (function () {
     function SignIn() {
     }
+    SignIn.prototype.register = function (name, code) {
+        this.users.push(name, code);
+    };
     SignIn.prototype.matchFound = function (user, code) {
         for (var i = 0; i < this.users.length; i++) {
             if ((this.users[i].uname === user.toLowercase()) && (this.users[i].pcode === code)) {

@@ -38,14 +38,17 @@ export class SearchBox {
       for (var key in ad[i].x) {
         if (ad[i].x.hasOwnProperty(key)) {
           if((searchWord.toLowerCase() === key) || (searchWord.toLowerCase() === ad[i].x[key]) || (searchWord.toLowerCase() === ad[i].x.cName.toLowerCase())) {
-            // document.getElementsByClassName("tab-pane fade in active")[0].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
-            // document.getElementById(ad[i].x.cName.toLowerCase()).className = "tab-pane fade in active"; //searched category ki navmenu ko active krdo
+            let deactivate = document.getElementsByClassName("tab-pane fade in active");
+            for(let j=0; j<deactivate.length; j++){
+                deactivate[j].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
+            }
+            document.getElementById(ad[i].x.cName).className = "tab-pane fade in active"; //searched category ki navmenu ko active krdo
 
             switch(ad[i].x.cName){
               case "Books": {
                 alert(ad[i].x[key]);
-                document.getElementById("p1").className = "tab-pane fade";
-                document.getElementById("books").className ="tab-pane fade in active";
+                // document.getElementById("p1").className = "tab-pane fade";
+                // document.getElementById("books").className ="tab-pane fade in active";
                 document.getElementById("aTab").className = ''; //removing active class
                 document.getElementById("bTab").className = 'active'; //activating the books tab;
                 document.getElementById("p1").innerHTML = '<book></book>'; //display books array
@@ -53,8 +56,8 @@ export class SearchBox {
               }
               case "Cars": {
                 alert(ad[i].x[key]);
-                document.getElementById("p1").className = "tab-pane fade";
-                document.getElementById("cars").className ="tab-pane fade in active";
+                // document.getElementById("p1").className = "tab-pane fade";
+                // document.getElementById("cars").className ="tab-pane fade in active";
                 document.getElementById("aTab").className = ''; //removing active class
                 document.getElementById("cTab").className = 'active'; //activating the cars tab
                 document.getElementById("p1").innerHTML = '<car></car>'; //display cars array
@@ -62,8 +65,8 @@ export class SearchBox {
               }
               case "Mobiles": {
                 alert(ad[i].x[key]);
-                document.getElementById("p1").className = "tab-pane fade";
-                document.getElementById("mobiles").className ="tab-pane fade in active";
+                // document.getElementById("p1").className = "tab-pane fade";
+                // document.getElementById("mobiles").className ="tab-pane fade in active";
                 document.getElementById("aTab").className = ''; //removing active class
                 document.getElementById("mTab").className = 'active'; //activating the mobiles tab
                 document.getElementById("p1").innerHTML = '<mobile></mobile>'; //display mobiles array
