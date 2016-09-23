@@ -4,6 +4,9 @@ import {Books, Cars, Mobiles} from './adObjects';
 import { DisplayBook } from './book';
 import { DisplayMobile } from './mobile';
 import {DisplayCar} from './car';
+import {OneBook} from './oneBook';
+import {OneCar} from './oneCar';
+import {OneMobile} from './oneMobile';
 
 @Component({
   selector: 'searchBox', 
@@ -37,7 +40,28 @@ export class SearchBox {
     for(let i = 0; i < ad.length; i++){
       for (var key in ad[i].x) {
         if (ad[i].x.hasOwnProperty(key)) {
-          if((searchWord.toLowerCase() === key) || (searchWord.toLowerCase() === ad[i].x[key]) || (searchWord.toLowerCase() === ad[i].x.cName.toLowerCase())) {
+          //*********************************************************************
+          if(searchWord.toLowerCase() === ad[i].x[key].toLowerCase()) {
+            switch(ad[i].x.cName){
+              case "Books": {
+                document.getElementById("p1").innerHTML = '<oneBook></oneBook>'; //display the book
+                break;
+              }
+              case "Cars": {
+                document.getElementById("p1").innerHTML = '<oneCar></oneCar>'; //display the car
+                break;
+              }
+              case "Mobiles": {
+                document.getElementById("p1").innerHTML = '<oneMobile></oneMobile>'; //display the mobile
+                break;
+              }
+              default: {
+                alert("You searched for: " + searchWord + "<br> Match not Found!"); //unreachable it seems
+              }
+          } //switch ends
+          } // if ends
+          //******************************************************************************
+          else if((searchWord.toLowerCase() === key.toLowerCase()) || (searchWord.toLowerCase() === ad[i].x.cName.toLowerCase())) {
             let deactivate = document.getElementsByClassName("tab-pane fade in active");
             for(let j=0; j<deactivate.length; j++){
                 deactivate[j].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
