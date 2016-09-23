@@ -12,15 +12,15 @@ import {formInput} from './app.forminput';
 import {Loop} from './forloop';
 import {AdService} from './ad.service';
 import {Footer} from './footer';
-//import {SignIn} from './signin'; thori der k lie band kia hai kholna na bhoolna
+import {SignIn} from './signin'; 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer 
-  ], //, SignIn
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer , SignIn
+  ], //
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer, SignIn
   ] //, SignIn
 })
 export class AppModule { }

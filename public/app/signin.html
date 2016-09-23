@@ -1,3 +1,44 @@
+<html>
+  <head>
+    <title>Classified App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--To ensure proper rendering and touch zooming, using meta tag-->
+    <link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- bootstrap cdn links -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- bootstrap cdn links ended -->
+
+    <!--firebase cdn for deployment
+        <script src='https://cdn.firebase.com/js/client/2.4.2/firebase.js'>
+            var Firebase = require("firebase");
+        </script>
+  <script src="https://angular2-helloworldapp.firebaseapp.com"> </script> 
+  firebase url demo ******** how to connect yar***********-->
+    <!-- 1. Load libraries -->
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ 
+        console.error(err); 
+      });
+    </script>
+  </head>
+  
+  <!-- 3. Display the application -->
+  <body>
+
 <div id="signin">
 <!-- Sign In Input Fields-->
     <form action="../index.html" method="post" (submit)="matchFound(username.value, password.value)";>
@@ -13,7 +54,7 @@
 <!--Sign Up Link Button-->
     <p> New to Classified App? 
         <a href="#signup">
-            <button type="button" class="btn btn-primary" (click)="document.getElementById('name').setAttribute('autofocus','autofocus')"> SignUp </button>
+            <button type="button" class="btn btn-primary"> SignUp </button>
         </a>
     </p>
 </div> <!-- /#signin -->
@@ -47,25 +88,5 @@
             </div> <!-- /.container -->
         </div> <!-- jumbotron -->
 <footer-area></footer-area>
-<style>
-    .jumbotron {
-            background-image: url("Images/5.jpg");
-            background-size: 100% 100%; /* Image will stretch to cover entire content area */
-            background-repeat: no-repeat;
-            color: white !important;
-            height: 500px;
-        }
-        h1 {
-            font-size: 84px;
-            font-family: "Old English Text MC";
-        }
-       #tagline {
-            font-size: 38px;
-            font-family: Calibri, Arial, Helvetica, Verdana, sans-serif;
-            font-weight: light;
-            text-transform: lowercase;
-        }
-        form input {
-            padding: 5px;
-        }
-    </style>
+</body>
+</html>

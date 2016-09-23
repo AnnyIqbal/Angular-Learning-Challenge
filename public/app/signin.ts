@@ -6,17 +6,21 @@ import {Footer} from './footer';
     templateUrl : 'app/signin.html',
     styles: [`
         .jumbotron {
-            background-image: url("Images/bg10.png"); 
+            background-image: url("Images/5.jpg");
             background-size: 100% 100%; /* Image will stretch to cover entire content area */
             background-repeat: no-repeat;
-            color: black !important;
-            height: 400px;
+            color: white !important;
+            height: 500px;
         }
         h1 {
             font-size: 84px;
+            font-family: "Old English Text MC";
         }
-        h2 {
+       #tagline {
             font-size: 38px;
+            font-family: Calibri, Arial, Helvetica, Verdana, sans-serif;
+            font-weight: light;
+            text-transform: lowercase;
         }
         form input {
             padding: 5px;
@@ -25,7 +29,7 @@ import {Footer} from './footer';
 })
 export class SignIn{
     users: {uname: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
-   
+ 
     register(name, code) {
         this.users.push(name, code);
     }
