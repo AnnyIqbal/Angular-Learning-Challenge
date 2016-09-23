@@ -9,5 +9,5 @@ export const ad : any[] = [ // hard coded array for ad listings
         {x : new Cars("Corolla", "Toyota", 2016, 1500, "Blue", 540000, "app/Images/corolla.jpg")},
         {x : new Cars("CheryQQ", "Santro", 2016, 1000, "White", 205000, "app/Images/cheryqq.jpg")},
         {x : new Mobiles("Noir S1", "Q-Mobile", "Black", 5, 11000, "app/Images/S1.png")},
-        {x : new Mobiles("E8-2", "htc", "Black", 5, 27000, "app/Images/htc.jpg")}
+        {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
     ]; // objects are pushed dynamically whenever a user posts ad

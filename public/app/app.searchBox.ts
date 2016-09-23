@@ -28,6 +28,7 @@ import {OneMobile} from './oneMobile';
   }
   input {
     width: 50%;
+    padding: 5px;
   }
   `]
 })
@@ -105,9 +106,5 @@ export class SearchBox {
         } //outer-if ends
       } // inner-for ends
     } //outer for ends
-
-    if(matched === false) { //throw error
-      alert("You searched for '" + searchWord + "' : Match not Found!");
-    }
  } // search() ends
 }

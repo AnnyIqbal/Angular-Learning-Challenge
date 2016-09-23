@@ -9,8 +9,17 @@ import {Footer} from './footer';
             background-image: url("app/Images/bg10.png"); 
             background-size: 100% 100%; /* Image will stretch to cover entire content area */
             background-repeat: no-repeat;
-            font-size: larger;
-            color: white !important;
+            color: black !important;
+            height: 400px;
+        }
+        h1 {
+            font-size: 84px;
+        }
+        h2 {
+            font-size: 38px;
+        }
+        form input {
+            padding: 5px;
         }
     `]
 })

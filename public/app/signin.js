@@ -31,7 +31,7 @@ var SignIn = (function () {
         core_1.Component({
             selector: 'signin',
             templateUrl: 'app/signin.html',
-            styles: ["\n        .jumbotron {\n            background-image: url(\"app/Images/bg10.png\"); \n            background-size: 100% 100%; /* Image will stretch to cover entire content area */\n            background-repeat: no-repeat;\n            font-size: larger;\n            color: white !important;\n        }\n    "]
+            styles: ["\n        .jumbotron {\n            background-image: url(\"app/Images/bg10.png\"); \n            background-size: 100% 100%; /* Image will stretch to cover entire content area */\n            background-repeat: no-repeat;\n            color: black !important;\n            height: 400px;\n        }\n        h1 {\n            font-size: 84px;\n        }\n        h2 {\n            font-size: 38px;\n        }\n        form input {\n            padding: 5px;\n        }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], SignIn);

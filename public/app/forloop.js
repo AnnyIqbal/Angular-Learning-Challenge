@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require('@angular/core');
 var adObjects_1 = require('./adObjects');
 var Loop = (function () {
@@ -26,8 +29,10 @@ var Loop = (function () {
             selector: 'for',
             template: "\n    <ul>\n        <li *ngFor=\"let item of ad\">\n            <ul [ngSwitch]=\"item.x.cName\">\n               <li *ngSwitchCase=\"'Books'\">\n                    <div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{item.x.subject}} </h3>\n                        </div>\n                        <div class=\"panel-body row\">\n                            <div class= \"col-sm-4\">\n                                <img src={{item.x.image}} alt=\"book\" height=\"100\" width=\"100\" />\n                            </div>\n                            <div class=\"col-sm-8\"> \n                                <strong> Title: </strong> {{item.x.title}} <br />\n                                <strong> Author: </strong> {{item.x.author}} <br />\n                                <strong> Subject: </strong> {{item.x.subject}} \n                            </div>\n                        </div>\n                        <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}} /-</strong> </div>\n                    </div>\n                </li>\n               <li *ngSwitchCase=\"'Cars'\">\n                   <div class=\"panel panel-primary\">\n                        <div class=\"panel-heading\">\n                            <h3 class=\"panel-title\"> {{item.x.name}} </h3>\n                        </div>\n                    <div class=\"panel-body row\">\n                        <div class= \"col-sm-4\">\n                            <img src= {{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                        </div>\n                        <div class=\"col-sm-8\">\n                        <strong> Company: </strong> {{item.x.company}} <br />\n                        <strong> Model: </strong> {{item.x.model}} <br />\n                        <strong> Engine: </strong> {{item.x.engine}} cc <br />\n                        <strong> Color: </strong>{{item.x.color}} \n                        </div>\n                    </div>\n                    <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n                </div>\n        </li>\n        <li *ngSwitchCase=\"'Mobiles'\">\n            <div class=\"panel panel-primary\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\"> {{item.x.company }} {{item.x.model}} </h3>\n                </div>\n                <div class=\"panel-body row\">\n                    <div class= \"col-sm-4\">\n                        <img src={{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                    </div>\n                    <div class=\"col-sm-8\">\n                        <strong> Model: </strong> {{item.x.model}} <br />\n                        <strong> Company: </strong> {{item.x.company }} <br />\n                        <strong> Color: </strong> {{item.x.color}} <br />\n                        <strong> Screen Size: </strong> {{item.x.screenSize}}\n                    </div>\n                </div>\n                <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n            </div>\n        </li>\n        <li *ngSwitchDefault>Default choice</li>\n    </ul>\n  </li>\n</ul>\n            ",
             styles: ["\n    li {\n        list-style-type: none;\n    }\n    "]
-        })
+        }), 
+        __metadata('design:paramtypes', [])
     ], Loop);
     return Loop;
 }());
 exports.Loop = Loop;
+//# sourceMappingURL=forloop.js.map
