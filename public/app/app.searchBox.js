@@ -15,47 +15,37 @@ var SearchBox = (function () {
         this.text = "Search Here";
     }
     SearchBox.prototype.search = function (searchWord) {
-        var text;
+        var searchResults;
         for (var i = 0; i < adArray_1.ad.length; i++) {
             for (var key in adArray_1.ad[i].x) {
                 if (adArray_1.ad[i].x.hasOwnProperty(key)) {
-                    if (searchWord.toLowerCase() === adArray_1.ad[i].x[key]) {
-                        switch (adArray_1.ad[i].x.cName) {
-                            case "Books": {
-                                text = "<div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\"> \n                                    {{ad[i].x[key] }}\n                                </h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src={{key.image}} alt=\"book\" height=\"100\" width=\"100\" /> \n                                </div>\n                                <div class=\"col-sm-8\"> \n                                    <strong> Title: </strong> {{key.title}} <br />\n                                    <strong> Author: </strong> {{key.author}} <br />\n                                    <strong> Subject: </strong> {{key.subject}} \n                                </div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{key.price}} /-</strong> </div> \n                        </div>\n                    "; //display the books
-                                break;
-                            }
-                            case "Cars": {
-                                alert(adArray_1.ad[i].x[key]);
-                                text = "<div class=\"panel panel-primary\">\n                <div class=\"panel-heading\">\n                    <h3 class=\"panel-title\"> {{item.x.name}} </h3>\n                </div>\n                <div class=\"panel-body row\">\n                    <div class= \"col-sm-4\">\n                        <img src= {{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                    </div>\n                    <div class=\"col-sm-8\">\n                       <strong> Company: </strong> {{item.x.company}} <br />\n                       <strong> Model: </strong> {{item.x.model}} <br />\n                       <strong> Engine: </strong> {{item.x.engine}} cc <br />\n                       <strong> Color: </strong>{{item.x.color}} \n                    </div>\n                </div>\n                <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n                </div>";
-                                break;
-                            }
-                            case "Mobiles": {
-                                alert(adArray_1.ad[i].x[key]);
-                                text = "<div class=\"panel panel-primary\">\n                  <div class=\"panel-heading\">\n                      <h3 class=\"panel-title\"> {{item.x.company }} {{item.x.model}} </h3>\n                  </div>\n                  <div class=\"panel-body row\">\n                      <div class= \"col-sm-4\">\n                          <img src={{item.x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                      </div>\n                      <div class=\"col-sm-8\">\n                          <strong> Model: </strong> {{item.x.model}} <br />\n                          <strong> Company: </strong> {{item.x.company }} <br />\n                          <strong> Color: </strong> {{item.x.color}} <br />\n                          <strong> Screen Size: </strong> {{item.x.screenSize}}\n                      </div>\n                  </div>\n                  <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{item.x.price}}/-</strong> </div>\n              </div>";
-                                break;
-                            }
-                            default: {
-                                alert("Match not Found!!");
-                            }
-                        } // switch ends
-                        document.getElementById("search").innerHTML += text;
-                    }
-                    else if ((searchWord.toLowerCase() === key.toLowerCase()) || (searchWord.toLowerCase() === adArray_1.ad[i].x.cName.toLowerCase())) {
+                    if ((searchWord.toLowerCase() === key.toLowerCase()) || (searchWord.toLowerCase() === adArray_1.ad[i].x.cName.toLowerCase())) {
                         switch (adArray_1.ad[i].x.cName) {
                             case "Books": {
                                 alert(adArray_1.ad[i].x[key]); //values eg git
-                                document.getElementById("search").innerHTML += '<book></book>';
+                                document.getElementById("search").innerHTML = "<div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\"> \n                                    {{this.ad[i].x.subject }}\n                                </h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src={{key.image}} alt=\"book\" height=\"100\" width=\"100\" /> \n                                </div>\n                                <div class=\"col-sm-8\"> \n                                    <strong> Title: </strong> {{key.title}} <br />\n                                    <strong> Author: </strong> {{key.author}} <br />\n                                    <strong> Subject: </strong> {{key.subject}} \n                                </div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{key.price}} /-</strong> </div> \n                        </div>\n                    "; //display the books
                                 break;
                             }
                             case "Cars": {
                                 alert(adArray_1.ad[i].x[key]);
-                                document.getElementById("search").innerHTML += '<car></car>'; //display cars array
+                                // document.getElementById("p1").className = "tab-pane fade";
+                                // document.getElementById("books").className = "tab-pane fade";
+                                // document.getElementById("mobiles").className = "tab-pane fade";
+                                // document.getElementById("cars").className ="tab-pane fade in active";
+                                // document.getElementById("aTab").className = ''; //removing active class
+                                // document.getElementById("cTab").className = 'active'; //activating the cars tab
+                                document.getElementById("search").innerHTML = '<car></car>'; //display cars array
                                 break;
                             }
                             case "Mobiles": {
                                 alert(adArray_1.ad[i].x[key]);
-                                document.getElementById("search").innerHTML += '<mobile></mobile>'; //display mobiles array
+                                // document.getElementById("p1").className = "tab-pane fade";
+                                // document.getElementById("books").className = "tab-pane fade";
+                                // document.getElementById("cars").className = "tab-pane fade";
+                                // document.getElementById("mobiles").className ="tab-pane fade in active";
+                                // document.getElementById("aTab").className = ''; //removing active class
+                                // document.getElementById("mTab").className = 'active'; //activating the mobiles tab
+                                document.getElementById("search").innerHTML = '<mobile></mobile>'; //display mobiles array
                                 break;
                             }
                             default: {
