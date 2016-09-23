@@ -11,19 +11,19 @@ import {DisplayCar} from './car';
 import {formInput} from './app.forminput';
 import {Loop} from './forloop';
 import {AdService} from './ad.service';
-import {OneBook} from './oneBook';
-import {OneCar} from './oneCar';
-import {OneMobile} from './oneMobile';
+// import {OneBook} from './oneBook';
+// import {OneCar} from './oneCar';
+// import {OneMobile} from './oneMobile';
 import {Footer} from './footer';
 //import {SignIn} from './signin'; thori der k lie band kia hai kholna na bhoolna
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, OneBook, DisplayMobile, OneMobile, DisplayCar, OneCar, formInput, Loop, Footer 
-  ], //, SignIn
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer 
+  ], //, SignIn,OneBook,OneMobile, OneCar,
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, OneBook, DisplayMobile, OneMobile, DisplayCar, OneCar, formInput, Loop, Footer
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer
   ] //, SignIn
 })
 export class AppModule { }
