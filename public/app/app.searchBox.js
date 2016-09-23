@@ -19,43 +19,38 @@ var SearchBox = (function () {
             for (var key in adArray_1.ad[i].x) {
                 if (adArray_1.ad[i].x.hasOwnProperty(key)) {
                     if ((searchWord.toLowerCase() === key.toLowerCase()) || (searchWord.toLowerCase() === adArray_1.ad[i].x[key]) || (searchWord.toLowerCase() === adArray_1.ad[i].x.cName.toLowerCase())) {
-                        // let deactivate = document.getElementsByClassName("tab-pane fade in active");
-                        // for(let j=0; j<deactivate.length; j++){
-                        //     deactivate[j].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
-                        // }
-                        // document.getElementById(ad[i].x.cName).className = "tab-pane fade in active"; //searched category ki navmenu ko active krdo
                         switch (adArray_1.ad[i].x.cName) {
                             case "Books": {
-                                alert(adArray_1.ad[i].x[key]);
-                                document.getElementById("p1").className = "tab-pane fade";
-                                document.getElementById("cars").className = "tab-pane fade";
-                                document.getElementById("mobiles").className = "tab-pane fade";
-                                document.getElementById("books").className = "tab-pane fade in active";
-                                document.getElementById("aTab").className = ''; //removing active class
-                                document.getElementById("bTab").className = 'active'; //activating the books tab;
-                                document.getElementById("p1").innerHTML = '<book></book>'; //display books array
+                                // alert(ad[i].x[key]);
+                                // document.getElementById("p1").className = "tab-pane fade";
+                                // document.getElementById("cars").className = "tab-pane fade";
+                                // document.getElementById("mobiles").className = "tab-pane fade";
+                                // document.getElementById("books").className ="tab-pane fade in active";
+                                // document.getElementById("aTab").className = ''; //removing active class
+                                // document.getElementById("bTab").className = 'active'; //activating the books tab;
+                                document.getElementById("search").innerHTML = '<book></book>'; //display books array
                                 break;
                             }
                             case "Cars": {
                                 alert(adArray_1.ad[i].x[key]);
-                                document.getElementById("p1").className = "tab-pane fade";
-                                document.getElementById("books").className = "tab-pane fade";
-                                document.getElementById("mobiles").className = "tab-pane fade";
-                                document.getElementById("cars").className = "tab-pane fade in active";
-                                document.getElementById("aTab").className = ''; //removing active class
-                                document.getElementById("cTab").className = 'active'; //activating the cars tab
-                                document.getElementById("p1").innerHTML = '<car></car>'; //display cars array
+                                // document.getElementById("p1").className = "tab-pane fade";
+                                // document.getElementById("books").className = "tab-pane fade";
+                                // document.getElementById("mobiles").className = "tab-pane fade";
+                                // document.getElementById("cars").className ="tab-pane fade in active";
+                                // document.getElementById("aTab").className = ''; //removing active class
+                                // document.getElementById("cTab").className = 'active'; //activating the cars tab
+                                document.getElementById("search").innerHTML = '<car></car>'; //display cars array
                                 break;
                             }
                             case "Mobiles": {
                                 alert(adArray_1.ad[i].x[key]);
-                                document.getElementById("p1").className = "tab-pane fade";
-                                document.getElementById("books").className = "tab-pane fade";
-                                document.getElementById("cars").className = "tab-pane fade";
-                                document.getElementById("mobiles").className = "tab-pane fade in active";
-                                document.getElementById("aTab").className = ''; //removing active class
-                                document.getElementById("mTab").className = 'active'; //activating the mobiles tab
-                                document.getElementById("p1").innerHTML = '<mobile></mobile>'; //display mobiles array
+                                // document.getElementById("p1").className = "tab-pane fade";
+                                // document.getElementById("books").className = "tab-pane fade";
+                                // document.getElementById("cars").className = "tab-pane fade";
+                                // document.getElementById("mobiles").className ="tab-pane fade in active";
+                                // document.getElementById("aTab").className = ''; //removing active class
+                                // document.getElementById("mTab").className = 'active'; //activating the mobiles tab
+                                document.getElementById("search").innerHTML = '<mobile></mobile>'; //display mobiles array
                                 break;
                             }
                             default: {
