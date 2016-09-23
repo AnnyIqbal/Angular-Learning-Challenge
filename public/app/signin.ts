@@ -6,7 +6,7 @@ import {Footer} from './footer';
     templateUrl : 'app/signin.html',
     styles: [`
         .jumbotron {
-            background-image: url("app/Images/bg10.png"); 
+            background-image: url("Images/bg10.png"); 
             background-size: 100% 100%; /* Image will stretch to cover entire content area */
             background-repeat: no-repeat;
             color: black !important;
