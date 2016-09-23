@@ -10,9 +10,12 @@ h1 {
     font-family: "Old English Text", Georgia, 'Times New Roman', Times, serif !important;
     /*background-color: rgba(128,128,128,0.25);*/
 }
-figure img {
+img {
     height: 100px;
     width: 100px;
+}
+img:hover {
+    border:10px solid black;
 }
 .jumbotron {
     background-image: url("app/Images/bg10.png"); 
@@ -25,6 +28,9 @@ figure img {
 li a img {
     height: 50px;
     width: 50px;
+}
+li a img:hover {
+    background-color: black;
 }
 #button {
     margin-left: 46%;
@@ -69,6 +75,9 @@ input, select {
     li a img {
         width: 25px;
         height: 25px;
+    }
+    li a img:hover {
+        border:10px solid black;
     }
     form {
         width: 100%;
