@@ -99,9 +99,9 @@ export class SearchBox {
               }
               default: {
                 alert("You searched for: " + searchWord + "<br> Match not Found!"); //unreachable it seems
+              //alert("You searched for: " + searchWord + "Here it is! " + key + " -> " + ad[i].x[key]);
               }
             } // switch ends
-            //alert("You searched for: " + searchWord + "Here it is! " + key + " -> " + ad[i].x[key]);
           } // inner-if ends
         } //outer-if ends
       } // inner-for ends
