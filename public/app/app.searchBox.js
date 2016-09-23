@@ -18,57 +18,19 @@ var SearchBox = (function () {
         for (var i = 0; i < adArray_1.ad.length; i++) {
             for (var key in adArray_1.ad[i].x) {
                 if (adArray_1.ad[i].x.hasOwnProperty(key)) {
-                    /*********************************************************************
-                    if(searchWord.toLowerCase() === ad[i].x[key]) {
-                      switch(ad[i].x.cName){
-                        case "Books": {
-                          document.getElementById("p1").innerHTML = `
-                                <div class="panel panel-primary">
-                                      <div class="panel-heading">
-                                          <h3 class="panel-title">
-                                              {{ad.x.subject}}
-                                          </h3>
-                                      </div>
-                                      <div class="panel-body row">
-                                          <div class= "col-sm-4">
-                                              <img src={{ad.x.image}} alt="book" height="100" width="100" />
-                                          </div>
-                                          <div class="col-sm-8">
-                                              <strong> Title: </strong> {{ad.x.title}} <br />
-                                              <strong> Author: </strong> {{ad.x.author}} <br />
-                                              <strong> Subject: </strong> {{ad.x.subject}}
-                                          </div>
-                                      </div>
-                                      <div class="panel-footer text-right"> <strong>Price: Rs. {{ad.x.price}} /-</strong> </div>
-                                  </div>
-                              `; //display the book
-                          break;
-                        }
-                        // case "Cars": {
-                        //   document.getElementById("p1").innerHTML = '<oneCar></oneCar>'; //display the car
-                        //   break;
-                        // }
-                        // case "Mobiles": {
-                        //   document.getElementById("p1").innerHTML = '<oneMobile></oneMobile>'; //display the mobile
-                        //   break;
-                        // }
-                        default: {
-                          alert("You searched for: " + searchWord + "<br> Match not Found!"); //unreachable it seems
-                        }
-                    } //switch ends
-                    } // if ends
-                    //******************************************************************************/
                     if ((searchWord.toLowerCase() === key.toLowerCase()) || (searchWord.toLowerCase() === adArray_1.ad[i].x[key]) || (searchWord.toLowerCase() === adArray_1.ad[i].x.cName.toLowerCase())) {
-                        var deactivate = document.getElementsByClassName("tab-pane fade in active");
-                        for (var j = 0; j < deactivate.length; j++) {
-                            deactivate[j].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
-                        }
-                        document.getElementById(adArray_1.ad[i].x.cName).className = "tab-pane fade in active"; //searched category ki navmenu ko active krdo
+                        // let deactivate = document.getElementsByClassName("tab-pane fade in active");
+                        // for(let j=0; j<deactivate.length; j++){
+                        //     deactivate[j].className = "tab-pane fade"; //jo b active hai naavMenu use fade krdo
+                        // }
+                        // document.getElementById(ad[i].x.cName).className = "tab-pane fade in active"; //searched category ki navmenu ko active krdo
                         switch (adArray_1.ad[i].x.cName) {
                             case "Books": {
                                 alert(adArray_1.ad[i].x[key]);
-                                // document.getElementById("p1").className = "tab-pane fade";
-                                // document.getElementById("books").className ="tab-pane fade in active";
+                                document.getElementById("p1").className = "tab-pane fade";
+                                document.getElementById("cars").className = "tab-pane fade";
+                                document.getElementById("mobiles").className = "tab-pane fade";
+                                document.getElementById("books").className = "tab-pane fade in active";
                                 document.getElementById("aTab").className = ''; //removing active class
                                 document.getElementById("bTab").className = 'active'; //activating the books tab;
                                 document.getElementById("p1").innerHTML = '<book></book>'; //display books array
@@ -76,8 +38,10 @@ var SearchBox = (function () {
                             }
                             case "Cars": {
                                 alert(adArray_1.ad[i].x[key]);
-                                // document.getElementById("p1").className = "tab-pane fade";
-                                // document.getElementById("cars").className ="tab-pane fade in active";
+                                document.getElementById("p1").className = "tab-pane fade";
+                                document.getElementById("books").className = "tab-pane fade";
+                                document.getElementById("mobiles").className = "tab-pane fade";
+                                document.getElementById("cars").className = "tab-pane fade in active";
                                 document.getElementById("aTab").className = ''; //removing active class
                                 document.getElementById("cTab").className = 'active'; //activating the cars tab
                                 document.getElementById("p1").innerHTML = '<car></car>'; //display cars array
@@ -85,8 +49,10 @@ var SearchBox = (function () {
                             }
                             case "Mobiles": {
                                 alert(adArray_1.ad[i].x[key]);
-                                // document.getElementById("p1").className = "tab-pane fade";
-                                // document.getElementById("mobiles").className ="tab-pane fade in active";
+                                document.getElementById("p1").className = "tab-pane fade";
+                                document.getElementById("books").className = "tab-pane fade";
+                                document.getElementById("cars").className = "tab-pane fade";
+                                document.getElementById("mobiles").className = "tab-pane fade in active";
                                 document.getElementById("aTab").className = ''; //removing active class
                                 document.getElementById("mTab").className = 'active'; //activating the mobiles tab
                                 document.getElementById("p1").innerHTML = '<mobile></mobile>'; //display mobiles array
@@ -108,7 +74,7 @@ var SearchBox = (function () {
     SearchBox = __decorate([
         core_1.Component({
             selector: 'searchBox',
-            template: "\n    <span>\n      <label for=\"input\" class=\"sr-only\"> Search Ads Here </label>\n      <input type=\"search\" [placeholder]=\"'Search'\" #input (keydown.enter) = \"search(input.value)\" />\n      <button class=\"search-btn\" (click)=\"search(input.value)\"> Search </button>\n    </span>\n    <br /><br />\n    ",
+            template: "\n    <span>\n      <label for=\"input\" class=\"sr-only\"> Search Ads Here </label>\n      <input type=\"search\" [placeholder]=\"'Search'\" #input (keydown.enter) = \"search(input.value)\" />\n      <button class=\"search-btn btn btn-primary\" (click)=\"search(input.value)\"> Search </button>\n    </span>\n    <br /><br />\n    ",
             styles: ["\n  span {\n    font-family: Comic-sans, serif;\n  }\n  .search-btn {\n    background-color: rgb(72, 95, 249);\n    color: white;\n  }\n  input {\n    width: 50%;\n    padding: 5px;\n  }\n  "]
         }), 
         __metadata('design:paramtypes', [])
