@@ -3,10 +3,11 @@ import { SearchBox } from './app.searchBox';
 
 @Component({
   selector: 'my-app',
-  template: `<searchBox (search)="onSearch($event)" text="Type Your Search Here"></searchBox>`
+  template: `<searchBox  text="Type Your Search Here"></searchBox>`
+  // (search)="onSearch($event)"
 })
 export class AppComponent { 
-  onSearch(text) {
-    console.log(`From App : ${text}`);
-  }
+  // onSearch(text) {
+  //   console.log(`From App : ${text}`);
+  // }
 }

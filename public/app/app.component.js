@@ -12,13 +12,10 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
     }
-    AppComponent.prototype.onSearch = function (text) {
-        console.log("From App : " + text);
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<searchBox (search)=\"onSearch($event)\" text=\"Type Your Search Here\"></searchBox>"
+            template: "<searchBox  text=\"Type Your Search Here\"></searchBox>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

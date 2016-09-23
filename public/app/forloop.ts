@@ -76,7 +76,6 @@ import {Books, Cars, Mobiles} from './adObjects';
     `]
 })
 export class Loop { 
-    // choice: string;
     ad : any[] = [ // hard coded array for ad listings
         {x : new Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png")},
         {x : new Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png")},
@@ -88,22 +87,4 @@ export class Loop {
         {x : new Mobiles("Noir S1", "Q-Mobile", "black", 5, 11000, "app/Images/S1.png")},
         {x : new Mobiles("E8-2", "htc", "black", 5, 27000, "app/Images/htc.jpg")}
     ]; 
-
-    // select() : string{
-    //     for(let i=0; i<this.ad.length; i++){
-    //         if(this.ad[i].x.cName == "Books") {
-    //             return "Books";
-    //         }
-    //         else if(this.ad[i].x.cName == "Cars") {
-    //             return "Cars";
-    //         }
-    //         else if(this.ad[i].x.cName == "Mobiles") {
-    //             return "Mobiles";
-    //         }
-    //     }
-    // } 
-    // constructor(){
-    //     this.choice = this.select();
-    //     console.log(this.choice);
-    // }
 }

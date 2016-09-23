@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var adObjects_1 = require('./adObjects');
 var Loop = (function () {
     function Loop() {
-        // choice: string;
         this.ad = [
             { x: new adObjects_1.Books("HTML & CSS", "Jon Duckett", "HTML & CSS", 200, "app/Images/htmlcss.png") },
             { x: new adObjects_1.Books("Git Essentials", "Ferdinando Santacroce", "Git", 700, "app/Images/git.png") },
