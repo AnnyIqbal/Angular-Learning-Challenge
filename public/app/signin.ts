@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Footer} from './footer';
 
 @Component({
     selector : 'signin',
@@ -10,9 +11,6 @@ import {Component} from '@angular/core';
             background-repeat: no-repeat;
             font-size: larger;
             color: white !important;
-        }
-        #footer div {
-            display: inline;
         }
     `]
 })
@@ -26,6 +24,7 @@ export class SignIn{
     matchFound(user,code): boolean {
         for(let i=0; i<this.users.length; i++) {
             if((this.users[i].uname === user.toLowercase()) && (this.users[i].pcode === code)) {
+                alert("Welcome " + user + "!");
                 return true;
             }
             else {
