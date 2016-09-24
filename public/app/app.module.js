@@ -22,6 +22,7 @@ var app_forminput_1 = require('./app.forminput');
 var forloop_1 = require('./forloop');
 var footer_1 = require('./footer');
 var signin_1 = require('./signin');
+var index1_1 = require('./index1');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,10 +30,10 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, footer_1.Footer, signin_1.SignIn
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, footer_1.Footer, signin_1.SignIn, index1_1.Index1
             ],
             bootstrap: [
-                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, footer_1.Footer, signin_1.SignIn
+                app_component_1.AppComponent, app_header_1.Jumbotron, app_searchBox_1.SearchBox, app_navMenu_1.NavMenu, book_1.DisplayBook, mobile_1.DisplayMobile, car_1.DisplayCar, app_forminput_1.formInput, forloop_1.Loop, footer_1.Footer, signin_1.SignIn, index1_1.Index1
             ] //, SignIn
         }), 
         __metadata('design:paramtypes', [])

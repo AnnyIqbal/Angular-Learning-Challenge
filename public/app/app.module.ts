@@ -13,14 +13,15 @@ import {Loop} from './forloop';
 import {AdService} from './ad.service';
 import {Footer} from './footer';
 import {SignIn} from './signin'; 
+import {Index1} from './index1';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer , SignIn
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer , SignIn, Index1
   ], //
   bootstrap:    [ 
-    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer, SignIn
+    AppComponent, Jumbotron, SearchBox, NavMenu, DisplayBook, DisplayMobile, DisplayCar, formInput, Loop, Footer, SignIn, Index1
   ] //, SignIn
 })
 export class AppModule { }
