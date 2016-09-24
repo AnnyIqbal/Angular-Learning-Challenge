@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Jumbotron = (function () {
-    function Jumbotron() {
+var Header = (function () {
+    function Header() {
     }
-    Jumbotron = __decorate([
+    Header = __decorate([
         core_1.Component({
             selector: 'header-area',
-            template: "<!--Jumbotron from bootstrap-->\n            <div id=\"header\" class=\"jumbotron\"> \n                <br /><br /><br /><br /><br />\n                <h1>Classified App</h1>\n            </div>"
+            template: "\n            <div id=\"header\" class=\"jumbotron\"> \n                <br /><br /><br /><br /><br />\n                <h1>Classified App</h1>\n            </div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], Jumbotron);
-    return Jumbotron;
+    ], Header);
+    return Header;
 }());
-exports.Jumbotron = Jumbotron;
+exports.Header = Header;
 //# sourceMappingURL=app.header.js.map

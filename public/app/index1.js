@@ -15,7 +15,7 @@ var Index1 = (function () {
     Index1 = __decorate([
         core_1.Component({
             selector: 'index1',
-            template: " <header-area></header-area>\n    <navMenu></navMenu>\n    <for></for>\n    <FormInput></FormInput>\n    <footer-area></footer-area>"
+            template: " \n    <header-area></header-area>\n    <navMenu></navMenu>\n    <for></for>\n    <footer-area></footer-area>"
         }), 
         __metadata('design:paramtypes', [])
     ], Index1);
