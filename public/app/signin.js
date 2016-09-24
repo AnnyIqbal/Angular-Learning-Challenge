@@ -11,14 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var SignIn = (function () {
     function SignIn() {
+        this.isSignedIn = false;
     }
     SignIn.prototype.register = function (name, email, code) {
         if (this.isNotEmpty("name") && this.isNotEmpty("email") && this.isNotEmpty("code")) {
             this.users.push(name, email, code);
             alert("Thank you for Registration! " + name);
+            this.isSignedIn = true;
         }
         else {
             alert("Please fill out the fileds!");
+            this.isSignedIn = false;
         }
     };
     SignIn.prototype.isNotEmpty = function (id) {
@@ -32,16 +35,19 @@ var SignIn = (function () {
         }
     };
     SignIn.prototype.matchFound = function (user, code) {
+        var flag = false;
         for (var i = 0; i < this.users.length; i++) {
             if ((this.users[i].uname === user.toLowerCase() || user.toLowerCase() === "admin") && (this.users[i].pcode === code || code === 1234)) {
                 alert("Welcome " + user + "!");
-                return true;
+                flag = true;
             }
             else {
                 alert("Incorrect Username or Password!");
-                return false;
+                flag = false;
             }
         }
+        this.isSignedIn = flag ? true : false;
+        return flag;
     };
     SignIn = __decorate([
         core_1.Component({

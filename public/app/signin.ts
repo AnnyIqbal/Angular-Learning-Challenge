@@ -1,4 +1,8 @@
 import {Component} from '@angular/core';
+import {Jumbotron} from './app.header';
+import {NavMenu} from './app.navMenu';
+import {Loop} from './forloop';
+import {formInput} from './app.forminput';
 import {Footer} from './footer';
 
 @Component({
@@ -40,14 +44,18 @@ import {Footer} from './footer';
 })
 export class SignIn{
     users: {uname: string, email: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
+
+    isSignedIn:boolean = false;
  
     register(name, email, code) {
         if(this.isNotEmpty("name") && this.isNotEmpty("email") && this.isNotEmpty("code")) { 
             this.users.push(name, email, code);
             alert("Thank you for Registration! "+ name);
+            this.isSignedIn = true;
         }
         else {
             alert("Please fill out the fileds!");
+            this.isSignedIn = false;
         }
     }
     isNotEmpty(id: string): boolean { // check whether an input field is empty
@@ -61,16 +69,19 @@ export class SignIn{
         }
     }
     matchFound(user,code): boolean {
+        let flag =false;
         for(let i=0; i<this.users.length; i++) {
             if((this.users[i].uname === user.toLowerCase() || user.toLowerCase()==="admin") && (this.users[i].pcode === code || code===1234)) {
                 alert("Welcome " + user + "!");
-                return true;
+                flag = true;
             }
             else {
                 alert("Incorrect Username or Password!");
-                return false;
+                flag = false;
             }
         }
+        this.isSignedIn = flag? true:false;
+        return flag;
     }
 
 }
