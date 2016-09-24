@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'header', 
+  selector: 'header-area', 
   template: `<!--Jumbotron from bootstrap-->
             <div id="header" class="jumbotron"> 
                 <br /><br /><br /><br /><br />

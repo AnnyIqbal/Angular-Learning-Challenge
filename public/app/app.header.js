@@ -14,7 +14,7 @@ var Jumbotron = (function () {
     }
     Jumbotron = __decorate([
         core_1.Component({
-            selector: 'header',
+            selector: 'header-area',
             template: "<!--Jumbotron from bootstrap-->\n            <div id=\"header\" class=\"jumbotron\"> \n                <br /><br /><br /><br /><br />\n                <h1>Classified App</h1>\n            </div>"
         }), 
         __metadata('design:paramtypes', [])
