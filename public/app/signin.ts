@@ -32,9 +32,9 @@ import {Footer} from './footer';
         }
         #signin input {
             display:inline;
-            width: 100% !important;
-            margin-left: auto;
-            margin-right: auto;
+            // width: 100% !important;
+            // margin-left: auto;
+            // margin-right: auto;
         }
     `]
 })
