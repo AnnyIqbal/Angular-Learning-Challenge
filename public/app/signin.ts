@@ -42,7 +42,7 @@ export class SignIn{
     users: {uname: string, email: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
  
     register(name, email, code) {
-        if(name && email && code){
+        if(this.isNotEmpty("name") && this.isNotEmpty("email") && this.isNotEmpty("code")) { 
             this.users.push(name, email, code);
             alert("Thank you for Registration! "+ name);
         }
@@ -50,7 +50,16 @@ export class SignIn{
             alert("Please fill out the fileds!");
         }
     }
-
+    isNotEmpty(id: string): boolean { // check whether an input field is empty
+        let check: HTMLInputElement = document.getElementById(id) as HTMLInputElement;
+        if(check.toString().length === 0) {
+            alert("This is a required field!"); //throw error
+            check.focus(); // set focus on the field
+        }
+        else {
+            return true;
+        }
+    }
     matchFound(user,code): boolean {
         for(let i=0; i<this.users.length; i++) {
             if((this.users[i].uname === user.toLowerCase() || user.toLowerCase()==="admin") && (this.users[i].pcode === code || code===1234)) {

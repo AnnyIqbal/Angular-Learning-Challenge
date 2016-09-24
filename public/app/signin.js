@@ -13,12 +13,22 @@ var SignIn = (function () {
     function SignIn() {
     }
     SignIn.prototype.register = function (name, email, code) {
-        if (name && email && code) {
+        if (this.isNotEmpty("name") && this.isNotEmpty("email") && this.isNotEmpty("code")) {
             this.users.push(name, email, code);
             alert("Thank you for Registration! " + name);
         }
         else {
             alert("Please fill out the fileds!");
+        }
+    };
+    SignIn.prototype.isNotEmpty = function (id) {
+        var check = document.getElementById(id);
+        if (check.toString().length === 0) {
+            alert("This is a required field!"); //throw error
+            check.focus(); // set focus on the field
+        }
+        else {
+            return true;
         }
     };
     SignIn.prototype.matchFound = function (user, code) {
