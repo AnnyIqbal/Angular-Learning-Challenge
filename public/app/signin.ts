@@ -23,26 +23,32 @@ import {Footer} from './footer';
             text-transform: lowercase;
         }
         #signup {
-            width: 50% !important;
+            width: 100% !important;
             margin-left: auto;
             margin-right: auto;
         }
         form input {
             padding: 5px;
         }
-        #signin {
+        #signin input {
             display:inline;
-            width: 50% !important;
+            width: 100% !important;
             margin-left: auto;
             margin-right: auto;
         }
     `]
 })
 export class SignIn{
-    users: {uname: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
+    users: {uname: string, email: string, pcode: number}[]; //yahan p list of all users assign krwado from firebase
  
-    register(name, code) {
-        this.users.push(name, code);
+    register(name, email, code) {
+        if(name && email && code){
+            this.users.push(name, email, code);
+            alert("Thank you for Registration! "+ name);
+        }
+        else {
+            alert("Please fill out the fileds!");
+        }
     }
 
     matchFound(user,code): boolean {

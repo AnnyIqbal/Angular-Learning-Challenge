@@ -4,17 +4,15 @@
     <form action="index1.html" method="post" (submit)="matchFound(username.value, password.value)">
     <div class="col-sm-3">
         <label for="username" class="sr-only"> Username </label>
-        <input type="text" id="username" placeholder="Username" #username onfocus>
+        <input type="text" id="username" placeholder="Username" required #username onfocus>
     </div>
     <div class="col-sm-3">
         <label for="passcode" class="sr-only"> Password </label>
-        <input type="number" id="passcode" placeholder="Passcode" #password /> 
+        <input type="number" id="passcode" placeholder="Passcode" required #password /> 
     </div>
     <div class="col-sm-3">
-        <a href="index1.html">
             <input type="submit" class="btn btn-primary" value="SignIn" />
             <!--<button type="button" class="btn btn-primary" (click)="match(username.value, password.value)"> SignIn </button>-->
-        </a>
     </div>
     </form>
 <!--Sign Up Link Button-->
@@ -31,7 +29,7 @@
         <div class="jumbotron">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 text-center">
+                    <div class="col-sm-8 text-center">
                         <br /> <h1>Classified App</h1> <br /> 
                         <p id="tagline">
                             Where You Can <br> 
@@ -39,7 +37,7 @@
                             With Details and Pictures<br> 
                         </p><br />
                     </div> <!-- /col1 ends -->
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <br><br><br><br><br>
                         <form action="index1.html" method="post" role="form" id="signup">
                             <div class = "text-center form-group">
@@ -49,7 +47,7 @@
                                 <input type="email" id="email" placeholder="Email" required class="form-control" /> <br>
                                 <label for="name" class="sr-only"> Password (numbers only) </label>
                                 <input type="password" id="pw" #pw placeholder="Password (numbers only)" required class="form-control" /> <br>
-                                <button type="button" class="btn btn-primary btn-block" (click)="register(name.value, pw.value)"> Register </button>
+                                <button type="button" class="btn btn-primary btn-block" (click)="register(name.value, email.value, pw.value)"> Register </button>
                             </div>
                         </form>
                     </div> <!-- /col2 of form ends -->
