@@ -135,7 +135,7 @@ export class formInput implements OnInit {
                             <div class="panel-footer text-right"> <strong>Price: Rs.{{this.myAd[lastIndex].x.price}}/-</strong> </div>
                         </div>`; // creating new panel with title and content for book 
                 
-                document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
                 
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
@@ -175,7 +175,7 @@ export class formInput implements OnInit {
                             <div class="panel-footer text-right"> <strong>Price: Rs. {{this.myAd[lastIndex].x.price}} /-</strong> </div>
                         </div>`; // creating new panel with title and content for car
                 
-                document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showCar; // "all" tab page 3, id="p3"
                 document.getElementById("cars").innerHTML += showCar;
 
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
@@ -215,7 +215,7 @@ export class formInput implements OnInit {
                         </div>`; // creating new panel with title and content for mobile 
                 
                 
-                document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showMobile; // "all" tab page 3, id="p3"
                 document.getElementById("mobiles").innerHTML += showMobile;
 
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button

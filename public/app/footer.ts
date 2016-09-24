@@ -18,7 +18,8 @@ import {Component} from '@angular/core';
                 <a href="Javascript:void(0)"> All Rights Reserved, © 2016 </a>
             </div>
         </div> <!-- /.row -->
-        </div>`,
+        </div>
+        <br><br>`,
 styles : [`
         #footer div {
             display: inline;

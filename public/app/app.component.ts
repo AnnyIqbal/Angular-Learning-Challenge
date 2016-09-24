@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchBox } from './app.searchBox';
+import {SignIn} from './signin';
 
 @Component({
   selector: 'my-app',

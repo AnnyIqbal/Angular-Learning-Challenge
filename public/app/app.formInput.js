@@ -117,7 +117,7 @@ var formInput = (function () {
                 // display it in the All & Books tab
                 var showBook = void 0, lastIndex = this.myAd.length - 1;
                 showBook = "<div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\">{{this.myAd[lastIndex].x.subject}}</h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src= {{this.myAd[lastIndex].x.image}} alt=\"book\" height=\"100\" width=\"100\" />\n                                </div>\n                                <div class=\"col-sm-8\">{{this.myAd[lastIndex].x.display()}}</div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs.{{this.myAd[lastIndex].x.price}}/-</strong> </div>\n                        </div>"; // creating new panel with title and content for book 
-                document.getElementById("p3").innerHTML += showBook; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showBook; // "all" tab page 3, id="p3"
                 document.getElementById("books").innerHTML += showBook;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
                 document.getElementById("bTab").className = 'active'; // activating the books tab
@@ -141,7 +141,7 @@ var formInput = (function () {
                 // display it in the All & Cars tab
                 var showCar = void 0, lastIndex = this.myAd.length - 1;
                 showCar = "<div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\">{{this.myAd[lastIndex].x.name}}</h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src= {{this.myAd[lastIndex].x.image}} alt=\"car\" height=\"100\" width=\"100\" />\n                                </div>\n                                <div class=\"col-sm-8\">{{this.myAd[lastIndex].x.display()}} </div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs. {{this.myAd[lastIndex].x.price}} /-</strong> </div>\n                        </div>"; // creating new panel with title and content for car
-                document.getElementById("p3").innerHTML += showCar; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showCar; // "all" tab page 3, id="p3"
                 document.getElementById("cars").innerHTML += showCar;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
                 document.getElementById("cTab").className = 'active'; //activating the cars tab
@@ -164,7 +164,7 @@ var formInput = (function () {
                 // display it in the All & Mobiles tab
                 var showMobile = void 0, lastIndex = this.myAd.length - 1;
                 showMobile = "<div class=\"panel panel-primary\">\n                            <div class=\"panel-heading\">\n                                <h3 class=\"panel-title\">{{this.myAd[lastIndex].x.company}} {{this.myAd[lastIndex].x.model }}</h3>\n                            </div>\n                            <div class=\"panel-body row\">\n                                <div class= \"col-sm-4\">\n                                    <img src={{ this.myAd[lastIndex].x.image}} alt=\"mobile\" height=\"100\" width=\"100\" />\n                                </div>\n                                <div class=\"col-sm-8\">{{this.myAd[lastIndex].x.display()}}</div>\n                            </div>\n                            <div class=\"panel-footer text-right\"> <strong>Price: Rs.{{this.myAd[lastIndex].x.price}}/-</strong> </div>\n                        </div>"; // creating new panel with title and content for mobile 
-                document.getElementById("p3").innerHTML += showMobile; // "all" tab page 3, id="p3"
+                document.getElementById("p1").innerHTML += showMobile; // "all" tab page 3, id="p3"
                 document.getElementById("mobiles").innerHTML += showMobile;
                 document.getElementById("button").className = ''; // deactivating the nav bar's POST AD button
                 document.getElementById("mTab").className = 'active'; //activating the mobiles tab
